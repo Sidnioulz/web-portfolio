@@ -28,7 +28,9 @@ I use CircleCI to deploy automatically after each commit. You'll probably want t
 
 ### My Server
 
-I manually SCP my build to my personal Linux server, which is set up to have a `circleci` user with read/write access to all of `/var/www`. CircleCI has a copy of a private RSA key designed specifically to allow logging in as this user, as per the [CircleCI SSH Doc](https://circleci.com/docs/2.0/add-ssh-key/).
+I manually SCP my build to my personal Linux server, which is set up to have a `circleci` user with read/write access to all of `/var/www`.
+
+CircleCI has a copy of a private RSA key designed specifically to allow logging in as this user, as per the [CircleCI SSH Doc](https://circleci.com/docs/2.0/add-ssh-key/). My server also has a [GitHub Deploy Key](https://developer.github.com/v3/guides/managing-deploy-keys) to allow it to pull the latest version of the server configuration and dependencies.
 
 I have a [systemd](https://www.freedesktop.org/wiki/Software/systemd/) service set up to start my Web portfolio using `npm run start`, so I update my app on the server, replace the old build with the one made by CircleCI (less CO2 output than rebuilding!), and restart my service.
 
