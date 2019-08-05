@@ -6,11 +6,11 @@ import ShowLink from 'components/links/ShowLink';
 const Index = props => (
   <>
     <h1>Steve Dodier-Lazaro</h1>
-    // <ul>
-    //   {props.shows.map(show => (
-    //     <ShowLink key={show.id} id={show.id} name={show.name} />
-    //   ))}
-    // </ul>
+    <ul>
+      {props.shows.map(show => (
+        <ShowLink key={show.id} id={show.id} name={show.name} />
+      ))}
+    </ul>
     <style jsx>
       {`
         h1,
