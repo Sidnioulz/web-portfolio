@@ -1,0 +1,14 @@
+# Dependencies
+/node_modules
+
+# Build directory
+/.next
+
+# Environment files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+npm-debug.log*
