@@ -36,6 +36,7 @@ And because Redux is noisy, streamline the definition process *if I end up keepi
 
 ### Go too far
 * https://redux-observable.js.org/
+* Bugsnag
 
 ### Data Prefetching Strategies
 Consider using `componentDidMount` instead of `getInitialProps`, see https://medium.com/@diamondgfx/nextjs-lessons-learned-part-2-f1781237cf5c.
@@ -66,7 +67,9 @@ https://medium.com/@diamondgfx/nextjs-lessons-learned-part-2-f1781237cf5c
 
 ## Design Tooling
 
-https://www.figma.com/resources/extensions-and-apis/storybook-figma-addon/
+* https://www.figma.com/resources/extensions-and-apis/storybook-figma-addon/
+* Storybook components OR InVision Design System Manager OR Pattern Lab OR UXPin OR Fractal
+* react-sketchapp components (then into Figma)
 
 
 ## CI/CD
