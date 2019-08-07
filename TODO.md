@@ -12,6 +12,7 @@
 ### Core CSS
 * Write a `services/css.js` service with all my usual functions
 * Use [Figgo](https://github.com/B3nnyL/figgo) or [Figma SCSS](https://figma-scss.now.sh/) or a custom script to sync my Figma design assets into a JS source file
+** Dont forget to report in README that I need to define FIGMA_TOKEN in CI env and the .env file
 * Write the core CSS for my portfolio based on my brand identity
 * Load Web Fonts, ensure [proper performance](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization)
 
