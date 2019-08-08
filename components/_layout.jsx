@@ -1,25 +1,22 @@
+import 'sass/components/_layout.scss';
 import React from 'react';
 import Header from 'components/Header';
-
-const layoutStyle = {
-  margin: 20,
-  padding: 20,
-  border: '1px solid #DDD',
-};
+import Footer from 'components/Footer';
 
 const withLayout = function (Page) {
   return class Higher extends React.Component {
     static async getInitialProps(ctx) {
-      return Page.getInitialProps
-        ? Page.getInitialProps(ctx)
-        : {};
+      return Page.getInitialProps ? Page.getInitialProps(ctx) : {};
     }
 
     render() {
       return (
-        <div style={layoutStyle}>
+        <div className="Layout">
           <Header />
-          <Page {...this.props} />
+          <div className="page-wrapper">
+            <Page {...this.props} />
+          </div>
+          <Footer />
         </div>
       );
     }

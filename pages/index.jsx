@@ -1,6 +1,7 @@
 import fetch from 'isomorphic-unfetch';
 import PropTypes from 'prop-types';
 import withLayout from 'components/_layout';
+import PortfolioHead from 'components/PortfolioHead';
 import StyleLink from 'components/links/StyleLink';
 
 // TODO move this to style utils!
@@ -20,8 +21,9 @@ import StyleLink from 'components/links/StyleLink';
 
 const Index = props => (
   <>
-    <h1>Steve Dodier-Lazaro</h1>
-    <p>The colours below are directly extracted from the Figma file containing my design system.</p>
+    <PortfolioHead title="Portfolio" />
+    <h2>Under Development</h2>
+    <p>Please come back in a few weeks.</p>
     <ul>
       {props.styles.map(styleDef => (
         <StyleLink key={styleDef.key} style={styleDef} />
@@ -59,54 +61,54 @@ Index.defaultProps = {
   styles: [],
 };
 
-Index.getInitialProps = async function () {
-  const res = await fetch('https://api.figma.com/v1/teams/711400914227417571/styles?page_size=100', {
-    headers: {
-      'X-FIGMA-TOKEN': process.env.FIGMA_TOKEN,
-    },
-  });
-  const resJson = await res.json();
-
-  const { styles } = resJson.meta;
-  const files = Array.from(new Set(styles.map(s => s.file_key)));
-
-  const nodeRes = {};
-  await Promise.all(files.map(async (fileKey) => {
-    const nodeIds = styles
-      .filter(s => s.file_key === fileKey)
-      .filter(style => style.style_type === 'FILL')
-      .map(s => s.node_id)
-      .join(',');
-
-    if (nodeIds) {
-      const fetchRes = await fetch(`https://api.figma.com/v1/files/${fileKey}/nodes?ids=${nodeIds}`, {
-        headers: {
-          'X-FIGMA-TOKEN': process.env.FIGMA_TOKEN,
-        },
-      });
-      const json = await fetchRes.json();
-
-      nodeRes[fileKey] = json.nodes;
-    }
-  }));
-
-  // const nodeStyles = nodeResJsons.map(j => j.nodes).flat();
-  //
-  // console.log(nodeStyles);
-
-
-  return {
-    styles: styles
-      .filter(style => style.style_type === 'FILL')
-      .sort((a, b) => a.name.localeCompare(b.name))
-      .map(style => ({
-        key: style.key,
-        name: style.name,
-        // only support one layer
-        fill: nodeRes[style.file_key][style.node_id].document.fills[0].color,
-      })),
-  };
-};
+// Index.getInitialProps = async function () {
+//   const res = await fetch('https://api.figma.com/v1/teams/711400914227417571/styles?page_size=100', {
+//     headers: {
+//       'X-FIGMA-TOKEN': process.env.FIGMA_TOKEN,
+//     },
+//   });
+//   const resJson = await res.json();
+//
+//   const { styles } = resJson.meta;
+//   const files = Array.from(new Set(styles.map(s => s.file_key)));
+//
+//   const nodeRes = {};
+//   await Promise.all(files.map(async (fileKey) => {
+//     const nodeIds = styles
+//       .filter(s => s.file_key === fileKey)
+//       .filter(style => style.style_type === 'FILL')
+//       .map(s => s.node_id)
+//       .join(',');
+//
+//     if (nodeIds) {
+//       const fetchRes = await fetch(`https://api.figma.com/v1/files/${fileKey}/nodes?ids=${nodeIds}`, {
+//         headers: {
+//           'X-FIGMA-TOKEN': process.env.FIGMA_TOKEN,
+//         },
+//       });
+//       const json = await fetchRes.json();
+//
+//       nodeRes[fileKey] = json.nodes;
+//     }
+//   }));
+//
+//   // const nodeStyles = nodeResJsons.map(j => j.nodes).flat();
+//   //
+//   // console.log(nodeStyles);
+//
+//
+//   return {
+//     styles: styles
+//       .filter(style => style.style_type === 'FILL')
+//       .sort((a, b) => a.name.localeCompare(b.name))
+//       .map(style => ({
+//         key: style.key,
+//         name: style.name,
+//         // only support one layer
+//         fill: nodeRes[style.file_key][style.node_id].document.fills[0].color,
+//       })),
+//   };
+// };
 
 
 export default withLayout(Index);

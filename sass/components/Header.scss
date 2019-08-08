@@ -1,0 +1,38 @@
+@mixin header-ui(
+  $cls: Header,
+) {
+  .#{$cls} {
+    align-items: center;
+  	display: flex;
+  	flex-flow: row nowrap;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: 0 0 60px;
+  	width: 100vw;
+
+
+    > h1 {
+      flex: 0 0 auto;
+      margin: 6px 40px;
+      padding: 0;
+    }
+
+    > nav {
+  	  display: flex;
+      flex: 1 0 auto;
+    	flex-flow: row wrap;
+      justify-content: flex-end;
+      margin-right: 80px;
+
+      a {
+        background: url('/static/images/hyperlink-sprite.png');
+      }
+
+      a + a {
+        margin-right: 12px;
+      }
+    }
+  }
+};
+
+@include header-ui();

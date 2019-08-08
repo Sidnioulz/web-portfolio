@@ -1,0 +1,22 @@
+html, body {
+  margin: 0;
+}
+
+.Layout {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	min-height: 100%;
+
+  > .Header {
+    flex: 0 1 auto;
+  }
+
+  > .page-wrapper {
+    flex: 1 0 auto;
+  }
+
+  > .Footer {
+    flex: 0 0 auto;
+  }
+}
