@@ -1,11 +1,11 @@
-import 'sass/components/Header.scss';
+import css from 'sass/components/Header.scss';
 import Link from 'next/link';
 
-const Header = () => (
-  <div className="Header">
+const Header = props => (
+  <header className={`${props.className ? `${props.className} ` : ''}${css.Header}`}>
     <h1>
       <Link href="/">
-        <a><img className="logo" src="static/images/logo/logo-1x.png" alt="Steve D. Lazaro" /></a>
+        <a><img className={css.logo} src="static/images/logo/logo-1x.png" alt="Steve D. Lazaro" /></a>
       </Link>
     </h1>
     <nav>
@@ -28,7 +28,7 @@ const Header = () => (
         <a>Contact</a>
       </Link>
     </nav>
-  </div>
+  </header>
 );
 
 export default Header;

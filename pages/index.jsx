@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-unfetch';
+// import fetch from 'isomorphic-unfetch';
 import PropTypes from 'prop-types';
 import withLayout from 'components/_layout';
 import PortfolioHead from 'components/PortfolioHead';

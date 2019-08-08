@@ -32,7 +32,8 @@
     "func-names": ["error", "never"], # personal preference
     "react/destructuring-assignment": ["error", "never"], # personal preference
     "jsx-a11y/anchor-is-valid": 0, # Next.JS uses Link for href
-    "react/react-in-jsx-scope": 0 # Next.JS injects deps
+    "react/react-in-jsx-scope": 0, # Next.JS injects deps
+    "react/prop-types": [2, { ignore: ["className", "children"] }]
 
     # "react/forbid-prop-types": 0,
     # "react/jsx-filename-extension": 0,

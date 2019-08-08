@@ -25,11 +25,12 @@ const PortfolioHead = props => (
 );
 
 PortfolioHead.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
+  children: PropTypes.node,
   title: PropTypes.string.isRequired,
+};
+
+PortfolioHead.defaultProps = {
+  children: null,
 };
 
 export default PortfolioHead;
