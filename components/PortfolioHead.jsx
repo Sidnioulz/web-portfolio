@@ -7,7 +7,7 @@ const PortfolioHead = props => (
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
     {/* TODO: theme-color, use Lagon */}
-    <link rel="icon" sizes="192x192" href="static/images/AppIcon.png" />
+    <link rel="icon" sizes="192x192" href="/static/images/AppIcon.png" />
     <meta
       name="description"
       content="Steve Dodier-Lazaro's portfolio of UX Design, Software Development projects and research work."
