@@ -6,7 +6,8 @@ const Resume = () => (
     <PortfolioHead title="Download my Resume">
       <meta name="robots" content="noindex,nofollow" />
     </PortfolioHead>
-    <p>This is my Web portfolio. It is currently being built, and not yet ready for showing.</p>
+    <p><a href="/static/files/Dodier-Lazaro_Resume.pdf">Resume</a></p>
+    <p><a href="https://www.linkedin.com/in/stevedodierlazaro/">LinkedIn</a></p>
   </>
 );
 
