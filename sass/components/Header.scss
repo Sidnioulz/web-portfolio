@@ -22,7 +22,18 @@
     margin-right: 80px;
 
     a {
-      background: url('/static/images/hyperlink-sprite.png');
+      text-decoration: none;
+      color: black;
+      height: 24px;
+      background-image: url('/static/images/hyperlink-sprite.png');
+      background-repeat: repeat-x;
+      // background-size: 8px auto;
+      background-position: 0 -184px;
+
+      &:hover,
+      &:focus {
+        background-position: 0 16px;
+      }
     }
 
     a + a {
