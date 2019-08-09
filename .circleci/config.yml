@@ -51,7 +51,7 @@ jobs:
       - run:
           name: SSH into Web server to apply the latest build
           command: |
-            ssh $SSH_USER@$SSH_HOST "cd /var/www/web-portfolio && git fetch && git reset --hard ORIG_HEAD && npm install && rm .next -rf && mv .next-new .next && sudo systemctl restart web-portfolio"
+            ssh $SSH_USER@$SSH_HOST "cd /var/www/web-portfolio && git fetch && git reset --hard origin/master && npm install && rm .next -rf && mv .next-new .next && sudo systemctl restart web-portfolio"
 
 workflows:
   version: 2
