@@ -1,13 +1,39 @@
 @import 'util';
 @import 'color';
 
-$font-family: dynamic('Museo Sans');
-$font-family-button: dynamic('Roboto');
-$font-icon-font-family: dynamic('Font Awesome 5 Pro');
+
+@font-face {
+  font-family: 'Museo Sans';
+  font-weight: 300;
+  font-style: normal;
+  src: local('Museo Sans Light'), local('MuseoSans_300'), url('/static/fonts/MuseoSans_300.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Baloo';
+  font-weight: 400;
+  font-style: normal;
+  src: local('Baloo Regular'), local('Baloo-Regular'), url('/static/fonts/Baloo-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  font-weight: 400;
+  font-style: normal;
+  src: local('Quicksand Regular'), local('Quicksand-Regular'), url('/static/fonts/Quicksand-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'PatrickHand';
+  font-weight: 400;
+  font-style: normal;
+  src: local('PatrickHand Regular'), local('PatrickHand-Regular'), url('/static/fonts/PatrickHand-Regular.ttf') format('truetype');
+}
+
 
 $typography-body-lead-map: (
   color: get-color('Anthracite'),
-  font-family: $font-family,
+  font-family: 'Museo Sans',
   font-size: 1.8rem,
   font-style: normal,
   font-weight: 300,
@@ -22,7 +48,7 @@ $typography-body-lead-map: (
 
 $typography-body-text-m-map: (
   color: get-color('Serpentine brute'),
-  font-family: $font-family,
+  font-family: 'Museo Sans',
   font-size: 14pt,
   font-style: normal,
   font-weight: 300,
@@ -37,7 +63,7 @@ $typography-body-text-m-map: (
 
 $typography-body-text-s-map: (
   color: get-color('Serpentine brute'),
-  font-family: $font-family,
+  font-family: 'Museo Sans',
   font-size: 12pt,
   font-style: normal,
   font-weight: 300,
@@ -52,7 +78,7 @@ $typography-body-text-s-map: (
 
 $typography-body-text-xs-map: (
   color: get-color('Serpentine brute'),
-  font-family: $font-family,
+  font-family: 'Museo Sans',
   font-size: 10pt,
   font-style: normal,
   font-weight: 300,
@@ -98,7 +124,7 @@ $typography-page-subtitle-map: (
 
 $typography-page-section-title-map: (
   color: get-color('Anthracite'),
-  font-family: $font-family,
+  font-family: 'Museo Sans',
   font-size: 1.8rem,
   font-style: normal,
   font-weight: 300,
@@ -113,7 +139,7 @@ $typography-page-section-title-map: (
 
 $typography-blockquote-map: (
   color: get-color('Saphir'),
-  font-family: 'Patrick Hand',
+  font-family: 'PatrickHand',
   font-size: 20pt,
   font-style: normal,
   font-weight: 500,
