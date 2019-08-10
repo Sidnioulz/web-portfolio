@@ -1,0 +1,127 @@
+[
+  {
+    "authors": [
+      "Dodier-Lazaro, Steve"
+    ],
+    "key":"msc-thesis",
+    "istalk": false,
+    "title": "SODA CD: A Model for Scalability-Oriented, Distributed and Anticipative Collision Detection",
+    "publication": "Master's Thesis",
+    "year": 2012,
+    "publisher": "INSA Rennes",
+    "href": "/static/files/pub/Dodier-Lazaro_MScThesis.pdf",
+    "description": "In this master's thesis, we first analyze existing parallel algorithms for the problem of collision detection in virtual reality applications, as well as larger scale parallel algorithms taken from the particle simulation research field. Based on the properties we noticed to favour high scalability in these algorithms, we propose a novel approach to parallel collision detection. In order to allow the execution of interactive applications on systems made of tens of processors with an efficient solution, our parallel collision detection framework is designed to be decentralized and to exploit all available computing resources. More precisely, we improve the potential for scalability of virtual simulations primarily by loosening the synchronism constraints between processing units, moving from the current synchronize after each detection and constraint solving round scheme to several autonomous worlds that process a part of the application's simulation space at their own rhythm and synchronize with each other when an object moves from one to another. Our second contribution is a new rollback algorithm for speculative computing, that allows partial saving of the anticipated computations that get invalidated because of synchronization mechanisms. Both of these proposals are making use of a spatial subdivision uniform grid. Each processing unit is assigned a territory made of contiguous cells from this grid, and simulates the objects within this territory. The rollback algorithm makes use of the grid by integrating rollbacks cell by cell, thus saving some independant computations whenever not all cells are interconnected as a result of objects coexisting in adjacent cells. Processing units can work autonomously, using their own local clock and communicating exclusively with their direct neighbors in the grid, and making the results of their computations available via a circular buffer. This buffer is read by a rendering thread that allows users to visualize with the simulation. User input is also taken into account in the model, permitting the execution of interactive applications. We also introduce theoretical leads for load balancing in our new framework, for continuous and discrete algorithms. The proposed load balancing mechanism is distributed and does not involve global communication, in order not to hinder the scalability of the framework. It is based on the exchange of spatial subdivision grid cells that compose the area managed by each processing unit. Finally, we discuss preliminary experimentations performed with our implementation of the frame-work, despite the implementation not being complete enough to allow deterministic simulations yet. We also discuss limitations of our framework and directions for future work.",
+    "bibtex": "@mastersthesis{dodier-lazaro_soda-cd_2012,\n  TITLE = {{SODA CD: A Model for Scalability-Oriented, Distributed and Anticipative Collision Detection}},\n  AUTHOR = {Dodier-Lazaro, Steve},\n  URL = {https://dumas.ccsd.cnrs.fr/dumas-00725214},\n  PAGES = {48},\n  SCHOOL = {{INRIA-IRISA Rennes Bretagne Atlantique, {\\'e}quipe VR4I}},\n  YEAR = {2012},\n  MONTH = Jun,\n  KEYWORDS = {Parall{\\'e}lisme ; r{\\'e}alit{\\'e} virtuelle ; d{\\'e}tection de collisions},\n  PDF = {https://dumas.ccsd.cnrs.fr/dumas-00725214/file/rapport.pdf},\n}"
+  },
+  {
+    "authors": [
+      "Dodier-Lazaro, Steve",
+      "Avril, Quentin",
+      "Gouranton, Valérie"
+    ],
+    "key":"grapp-2013",
+    "istalk": false,
+    "title": "SODA: A Scalability-Oriented Distributed & Anticipative Model for Collision Detection in Physically-based Simulations",
+    "publication": "International Joint Conference on Computer Graphics Theory and Applications",
+    "year": 2013,
+    "publisher": "SCITEPRESS",
+    "href": "/static/files/pub/Dodier-Lazaro_GRAPP_2013.pdf",
+    "description": "In this paper, we propose a distributed and anticipative model for collision detection and propose a lead for distributed collision handling, two key components of physically-based simulations of virtual environments. This model is designed to improve the scalability of interactive deterministic simulations on distributed systems such as PC clusters. Our main contribution consists of loosening synchronism constraints in the collision detection and response pipeline to allow the simulation to run in a decentralized, distributed fashion. To do so, we setup a spatial subdivision grid, and assign a subset of the simulation space to each processor, made of contiguous cells from this grid. These processors synchronize only with their direct neighbors in the grid, and only when an object moves from one's area to another. We rely on the rarity of such synchronizations to allow anticipative computing that will also work towards improving scalability. When synchronizations occur, we propose an arrangement of collision checks and rollback algorithms that help reduce the processing cost of synchronized areas' bodies. We show potential for distributed load balancing strategies based on the exchange of grid cells, and explain how anticipative computing may, in cases of short computational peaks, improve user experience by avoiding frame-rate drop-downs.",
+    "bibtex": "@inproceedings{dodier-lazaro_soda_2013,\n  title={SODA: A Scalability-Oriented Distributed \\& Anticipative Model for Collision Detection in Physically-based Simulations},\n  author={Dodier-Lazaro, Steve and Avril, Quentin and Gouranton, Val{\\'e}rie},\n  booktitle={GRAPP 2013},\n  publisher: {SCITEPRESS},\n  year={2013}\n}"
+  },
+  {
+    "authors": [
+      "Dodier-Lazaro, Steve"
+    ],
+    "key":"ecscw-2015",
+    "istalk": false,
+    "title": "Appropriation and Principled Security",
+    "publication": "ECSCW 2015 Workshop on Experiences of Technology Appropriation: Unanticipated Users, Usage, Circumstances, and Design",
+    "year": 2015,
+    "publisher": "Springer",
+    "href": "/static/files/pub/Dodier-Lazaro_ECSCW_2015.pdf",
+    "description": "Secure systems have a reputation of being unusable and demanding on users, a situation attributed to a lack of usability and human factors expertise among security experts. We argue that the issue of unusable security might have deeper roots. Indeed, the design principles security relies on are out of touch with the reality of nowadays’ computing practices. In particular, the security principles of least privilege and fail-safe defaults strip human users of their ability to reconfigure systems and leave them stranded when facing interaction breakdowns. Security principles therefore prevent the reppropriation of systems they mediate both in unexpected practices and by unexpected users. We propose several leads to lessen the negative impact of those principles on secure systems.",
+    "bibtex": "@inproceedings{dodier-lazaro_appropriation_2015,\n      title={Appropriation and Principled Security},\n      author={Dodier-Lazaro, Steve},\n      booktitle={ECSCW 2015 Workshop on Experiences of Technology Appropriation: Unanticipated Users, Usage,\nCircumstances, and Design},\n      pages={6},\n      year={2015}\n    }"
+  },
+  {
+    "authors": [
+      "Dodier-Lazaro, Steve"
+    ],
+    "key":"phd-thesis",
+    "istalk": false,
+    "title": "Appropriate Security and Confinement Technologies: Methods for the Design of Appropriate Security and a Case Study on Confinement Technologies for Desktop Computers",
+    "publication": "PhD Thesis",
+    "year": 2018,
+    "publisher": "University College London",
+    "href": "/static/files/Dodier-Lazaro_Thesis.pdf",
+    "description": "Despite significant research, desktop computers remain fundamentally insecure. Malware is a prime culprit for data breaches in organisations. A vast number of user machines are connected to the Internet unprotected, leading to global ransomware attacks costing billions to world economies. Confinement systems are technologies that can thwart malware. Several security researchers have claimed to have designed usable confinement, and both Microsoft and Apple have deployed confinement into their desktop OSs in the form of sandboxes, but application developers avoid supporting it. Commercial off-the-shelf confinement systems exist which users can adopt and use, but very few do.\nMy thesis investigates the design process of confinement technologies, to understand why they are not in use. It is divided in two parts. Firstly, I examine why the methods of usable security may not be judicious when it comes to designing for adoption. I propose alternative methods and goals, focused on the adoption and appropriation of technologies, rather than on their usability. This alternative process, named appropriate security, rests on four principles: security research is about users, not technology; it is about appropriation, not usability; it should not cause harm to users; and it should involve users in shaping security goals, rather than impose others’ goals onto them.\nNext, I apply this approach to sandboxes, through a field study with users at risk of being disenfranchised by sandboxing if it were mandatory. In this study, I document users’ appropriations of their computers to elicit design requirements and to invent new types of file access policies for existing sandboxes. I build metrics and tools to evaluate the security provided by file access policies, and their cost to users. Using ground-truth data from users, I demonstrate that my policies (designed with users’ appropriations in mind) outperform existing ones in Windows both on security and usability. I then co-design confinement-based services with users, based on their own experiences of security, and which provide actual value to them, as a way to bootstrap security adoption. This study demonstrates the substantial benefits of implementing an appropriate security design process.",
+    "bibtex": "@phdthesis{dodier-lazaro_appropriate_2018,\n      title = {Appropriate Security and Confinement Technologies: Methods for the Design of Appropriate Security and a Case Study on Confinement Technologies for Desktop Computers},\n      author = {Dodier-Lazaro, Steve},\n      pages = {393},\n      school = {{University College London}},\n      year = {2018},\n      month = Jun,\n    }"
+  },
+  {
+    "authors": [
+      "Wang, Pengfei",
+      "Krinke, Jens",
+      "Lu, Kai",
+      "Li, Gen",
+      "Dodier-Lazaro, Steve"
+    ],
+    "key":"usenix-2017",
+    "istalk": false,
+    "title": "How double-fetch situations turn into double-fetch vulnerabilities: A study of double fetches in the Linux kernel",
+    "publication": "26th USENIX Security Symposium",
+    "year": 2017,
+    "publisher": "USENIX Association",
+    "href": "https://www.usenix.org/system/files/conference/usenixsecurity17/sec17-wang.pdf",
+    "description": "We present the first static approach that systematically detects potential double-fetch vulnerabilities in the Linux kernel. Using a pattern-based analysis, we identified 90 double fetches in the Linux kernel. 57 of these occur in drivers, which previous dynamic approaches were unable to detect without access to the corresponding hardware. We manually investigated the 90 occurrences, and inferred three typical scenarios in which double fetches occur. We discuss each of them in detail. We further developed a static analysis, based on the Coccinelle matching engine, that detects double-fetch situations which can cause kernel vulnerabilities. When applied to the Linux, FreeBSD, and Android kernels, our approach found six previously unknown double-fetch bugs, four of them in drivers, three of which are exploitable double-fetch vulnerabilities. All of the identified bugs and vulnerabilities have been confirmed and patched by maintainers. Our approach has been adopted by the Coccinelle team and is currently being integrated into the Linux kernel patch vetting. Based on our study, we also provide practical solutions for anticipating double-fetch bugs and vulnerabilities. We also provide a solution to automatically patch detected double-fetch bugs.",
+    "bibtex": "@inproceedings {wang_how_2017,\nauthor = {Pengfei Wang and Jens Krinke and Kai Lu and Gen Li and Steve Dodier-Lazaro},\ntitle = {How Double-Fetch Situations turn into Double-Fetch Vulnerabilities: A Study of Double Fetches in the Linux Kernel},\nbooktitle = {26th {USENIX} Security Symposium ({USENIX} Security 17)},\nyear = {2017},\nisbn = {978-1-931971-40-9},\naddress = {Vancouver, BC},\npages = {1--16},\nurl = {https://www.usenix.org/conference/usenixsecurity17/technical-sessions/presentation/wang-pengfei},\npublisher = {{USENIX} Association},\nmonth = aug,\n}"
+  },
+  {
+    "authors": [
+      "Dodier-Lazaro, Steve",
+      "Becker, Ingolf",
+      "Krinke, Jens",
+      "Sasse, M. Angela"
+    ],
+    "key":"hcii-2017",
+    "istalk": false,
+    "title": "No Good Reason to Remove Features: Expert Users Value Useful Apps over Secure Ones",
+    "publication": "International Conference on Human Aspects of Information Security, Privacy, and Trust",
+    "year": 2017,
+    "publisher": "Springer",
+    "href": "/static/files/pub/Dodier-Lazaro_HCII_2017.pdf",
+    "description": "Application sandboxes are an essential security mechanism to contain malware, but are seldom used on desktops. To understand why this is the case, we interviewed 13 expert users about app appropriation decisions they made on their desktop computers. We collected 201 statements about app appropriation decisions. Our value-sensitive empirical analysis of the interviews revealed that (a) security played a very minor role in app appropriation; (b) users valued plugins that support their productivity; (c) users may abandon apps that remove a feature – especially when a feature was blocked for security reasons. Our expert desktop users valued a stable user experience and flexibility, and are unwilling to sacrifice those for better security. We conclude that sandboxing – as currently implemented – is unlikely to be voluntarily adopted, especially by expert users. For sandboxing to become a desirable security mechanism, they must first accommodate plugins and features widely found in popular desktop apps.",
+    "bibtex": "@inproceedings{dodier-lazaro_no_2017,\n    address = {Vancouver, Canada},\n    series = {{HCII} '17},\n    booktitle={International Conference on Human Aspects of Information Security, Privacy, and Trust},\n    publisher = {Springer-Verlag},\n    author = {Dodier-Lazaro, Steve and Becker, Ingolf and Krinke, Jens and Sasse, M. Angela},\n    pages={25--44},\n    year = {2017}\n}"
+  },
+  {
+    "authors": [
+      "Dodier-Lazaro, Steve",
+      "Abu-Salma, Ruba",
+      "Becker, Ingolf",
+      "Sasse, M. Angela"
+    ],
+    "key":"chi-2017",
+    "istalk": false,
+    "title": "From Paternalistic to User-Centred Security: Putting Users First with Value-Sensitive Design",
+    "publication": "CHI 2017 Workshop on Values in Computing",
+    "year": 2017,
+    "publisher": "ACM",
+    "href": "/static/files/pub/Dodier-Lazaro_CHI_2017.pdf",
+    "description": "Usable security research to date has focused on making users more secure, by identifying and addressing usability issues that lead users to making mistakes, or by persuading users to pay attention to security and make secure choices. However, security goals were set by security experts, who were unaware that users often have other priorities and value security differently. In this paper, we present examples of circumventions and non-adoption of secure systems designed under this paternalistic mindset. We argue that security experts need to identify user values and deliver on them. To do that, we need a methodological framework that can conceptualise values and identify those that impact user engagement with security. We show that (a) engagement with, and adherence to security, are mediated by user values, and that (b) it is necessary to model those values to understand the nature of security’s failures and to design viable alternatives.",
+    "bibtex": "@inproceedings{dodier-lazaro_paternalistic_2017,\n    address = {Denver, CO},\n    title = {From {Paternalistic} to {User}-{Centred} {Security}: {Putting} {Users} {First} with {Value}-{Sensitive} {Design}},\n    language = {English},\n    author = {Dodier-Lazaro, Steve and Abu-Salma, Ruba and Becker, Ingolf and Sasse, M Angela},\n    year = {2017}\n    booktitle={CHI 2017 Workshop on Values in Computing},\n    pages={7},\n      organization={ACM}\n}"
+  },
+  {
+    "authors": [
+      "Dodier-Lazaro, Steve",
+      "Peres, Martin"
+    ],
+    "key":"xdc-2014",
+    "istalk": true,
+    "title": "Security in Wayland-Based DEs: Privileged Clients, LibWSM and Security UIs",
+    "publication": "X.Org Developer's Conference",
+    "year": 2014,
+    "publisher": "The X.Org Foundation",
+    "href": "https://www.x.org/wiki/Events/XDC2014/XDC2014DodierPeresSecurity/xorg-talk.pdf",
+    "description": "We have been talking about security in the Graphics Stack for some time. Wayland has fixed all the problems we had … but at the expense of usability and accessibility as applications are now unable to perform any sensitive task such as taking screenshots or injecting input events. Indeed, some applications (especially the ones related to accessibility) really DO require privileged capabilities and should work across the different Wayland compositors. Before designing privileged interfaces, it was thus necessary to think about how to handle privileged clients securely. The biggest issue with handling privileged clients is not how to grant them the rights, it is about making sure that the user understands what is going on on his/her system. This sometimes require to capture the user’s intent somewhere in the TCB (Trusted Code Base), often in the compositor.\nIn February, we proposed a way to handle privileged clients. We first started by listing different ways of capturing the user’s intent in the Wayland compositor. We then talked about how to expose the current security threats and vulnerabilities to user by adding an icon to the systray allowing the user both to see the security properties that may become violated and by which programs. The user could then revoke the rights away from an application for the current instance or any further instance.\nWe also proposed a way to delegate security decisions within the compositor to a centralized security decision engine such as SELinux, AppArmor or polkit. This would allow distribution developers to ship applications with their security policy for the system and the graphical environment. We called this proposition Wayland Security Module (WSM) because they resemble the Linux Security Module interface found in the Linux kernel. An android-like system could thus be implemented where the package manager displays the capabilities required by the application and the user would select the permission he/she gives to the application. The same policy could be shared across all the Desktop Environments thanks to the common WSM interface that would need to be used by all the Wayland compositors. Work on the WSM is currently on its way.\nThis leads us to another GUI-related problem of applications, they need to be able to access files only when the user wants it to. Capturing the user’s intent when it comes to giving permission to an application to open a file requires to delegate the file chooser to an external process. Doing so has several challenges that we will talk about before showing our proposition and show you our interface (both from the code and the GUI perspective).\nCurrently, any application can pretend to be your DE’s window that asks for credentials. This inspired us to look into the different of authorization and authentication UIs on major OSes and their problems. We finally proposed several ways of making your DE’s authentication window be unspoofable by making it trivial for a user to check its legitimacy.",
+    "mediahref": "https://www.youtube.com/watch?v=mSoQogLW6vw"
+  }
+]

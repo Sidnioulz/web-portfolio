@@ -18,7 +18,7 @@ const Header = props => (
       <Link href="https://mupuf.org/blog/">
         <a>Blog</a>
       </Link>
-      <Link href="https://scholar.google.com/citations?user=Imc_z-wAAAAJ&hl=en">
+      <Link href="/publications">
         <a>Publications</a>
       </Link>
       <Link href="/resume">
