@@ -6,7 +6,7 @@ const PortfolioHead = props => (
   <Head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
-    {/* TODO: theme-color, use Lagon */}
+    <meta name=" theme-color" content="#1185c2" />
     <link rel="icon" sizes="192x192" href="/static/images/AppIcon.png" />
     <meta
       name="description"

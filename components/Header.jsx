@@ -12,12 +12,8 @@ const Header = props => (
       <Link href="/portfolio">
         <a>Portfolio</a>
       </Link>
-      <Link href="https://github.com/Sidnioulz">
-        <a>Software</a>
-      </Link>
-      <Link href="https://mupuf.org/blog/">
-        <a>Blog</a>
-      </Link>
+      <a href="https://github.com/Sidnioulz">Software</a>
+      <a href="https://mupuf.org/blog/">Blog</a>
       <Link href="/publications">
         <a>Publications</a>
       </Link>

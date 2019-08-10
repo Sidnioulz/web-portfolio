@@ -43,6 +43,9 @@ const Page = props => (
           </pre>
         </code>
       </div>
+      <p>
+        {'Support for font styles is coming soon.'}
+      </p>
     </div>
     <style jsx>
       {`
