@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import PropTypes from 'prop-types';
 import ExtraPropTypes from 'react-extra-prop-types';
 
@@ -16,22 +15,13 @@ function fgColorForBg(bg) {
   return (brightness > 125) ? '#222' : '#eee';
 }
 
-const StyleLink = props => (
-  <li>
-    <Link href="/figma-style/[key]" as={`/figma-style/${props.style.key}`}>
-      <a>
-        {props.style.name}
-      </a>
-    </Link>
+const StyleColorBlock = props => (
+  <div>
+    {props.style.name}
+
     <style jsx>
       {`
-      li {
-        list-style: none;
-        margin: 0;
-        height: 36px;
-      }
-
-      a {
+      div {
         background-color: ${figmaRgbToString(props.style.fill)};
         color: ${fgColorForBg(props.style.fill)};
         display: inline-block;
@@ -43,15 +33,15 @@ const StyleLink = props => (
         width: 200px;
       }
 
-      a:hover {
-        opacity: 0.6;
+      div:hover {
+        opacity: 0.8;
       }
     `}
     </style>
-  </li>
+  </div>
 );
 
-StyleLink.propTypes = {
+StyleColorBlock.propTypes = {
   style: PropTypes.shape({
     key: PropTypes.string.isRequired,
     fill: ExtraPropTypes.color.isRequired,
@@ -59,4 +49,4 @@ StyleLink.propTypes = {
   }).isRequired,
 };
 
-export default StyleLink;
+export default StyleColorBlock;

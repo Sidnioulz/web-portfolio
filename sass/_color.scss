@@ -1,0 +1,44 @@
+@import 'util';
+
+$colors: (
+  'Anthracite': #042a2b,
+  'Banane': #fae4b2,
+  'Blanc': #fbfbfb,
+  'Ciel': #86cee8,
+  'Cuivre rose': #a87b7a,
+  'Lagon': #35aed9,
+  'Mousse': #586d5e,
+  'Mousse délavée': #9ba79e,
+  'Pistache': #dae2cd,
+  'Poudre': #dfadac,
+  'Poussin': #ffea81,
+  'Saphir': #1185c2,
+  'Serpentine brute': #395758,
+  'Vanille': #f5f1e6,
+);
+
+@function get-color($name) {
+  @return map-get($colors, $name);
+}
+
+$semantic-colors: (
+ danger: get-color('Poudre'),
+ danger-dark: get-color('Cuivre rose'),
+ success: get-color('Mousse délavée'),
+ success-dark: get-color('Mousse'),
+ primary: get-color('Saphir'),
+ secondary: get-color('Poussin'),
+ muted: get-color('Serpentine brute')
+);
+
+@mixin color-modifiers($attribute: 'color', $prefix: '-') {
+  @each $name, $hex in $semantic-colors {
+    &#{$prefix}#{$name} {
+      #{$attribute}: $hex !important;
+    }
+  }
+}
+
+.text {
+  @include color-modifiers;
+}

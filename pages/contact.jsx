@@ -8,7 +8,7 @@ const Contact = () => (
     </PortfolioHead>
     <p>
       {'Contact me '}
-      <a href="mailto:sdodierlazaro@gmail.com">via email</a>
+      <a href="mailto:sdodierlazaro@gmail.com">by email</a>
       {' or '}
       <a href="tel:+31123456789">by phone at +33 6 24 19 63</a>
       {'.'}

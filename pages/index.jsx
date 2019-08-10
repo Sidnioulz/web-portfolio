@@ -6,12 +6,12 @@ import Link from 'next/link';
 const Index = () => (
   <>
     <PortfolioHead title="Portfolio" />
-    <h2>Under Development</h2>
-    <p>Please come back in a few weeks.</p>
-    <h6>
+    <h1>Under Development</h1>
+    <h2>Please come back in a few weeks.</h2>
+    <p>
       {'Psst. Want to see the Figma API in action? '}
       <Link href="/figma"><a>Click here to see my local figma styles rendered in HTML.</a></Link>
-    </h6>
+    </p>
   </>
 );
 

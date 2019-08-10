@@ -1,6 +1,37 @@
+@import 'sass/base';
+
 html, body {
   margin: 0;
+  font-size: 62.5%;
+
+  * {
+    @include typography-body-text-s();
+  }
 }
+
+h1 {
+  @include typography-page-title();
+  margin: 0;
+}
+
+h2 {
+  @include typography-page-subtitle();
+  margin: 0;
+}
+
+h3 {
+  @include typography-page-section-title();
+  margin: 0 0 12px;
+}
+
+p + h3 {
+  margin-top: 70px;
+}
+
+h2 + h3 {
+  margin-top: 30px;
+}
+
 
 .Layout {
 	display: flex;
@@ -15,6 +46,9 @@ html, body {
   > .page-wrapper {
     flex: 1 0 auto;
     padding: 0 60px;
+    p a {
+      @include link-decorator();
+    }
   }
 
   > .Footer {

@@ -3,11 +3,11 @@ import Link from 'next/link';
 
 const Header = props => (
   <header className={`${props.className ? `${props.className} ` : ''}${css.Header}`}>
-    <h1>
+    <div className={css.logoContainer}>
       <Link href="/">
         <a><img className={css.logo} src="/static/images/logo/logo-1x.png" alt="Steve D. Lazaro" /></a>
       </Link>
-    </h1>
+    </div>
     <nav>
       <Link href="/portfolio">
         <a>Portfolio</a>

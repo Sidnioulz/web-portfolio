@@ -1,0 +1,170 @@
+@import 'util';
+@import 'color';
+
+$font-family: dynamic('Museo Sans');
+$font-family-button: dynamic('Roboto');
+$font-icon-font-family: dynamic('Font Awesome 5 Pro');
+
+$typography-body-lead-map: (
+  color: get-color('Anthracite'),
+  font-family: $font-family,
+  font-size: 1.8rem,
+  font-style: normal,
+  font-weight: 300,
+  line-height: 1.279,
+);
+@mixin typography-body-lead($color: null) {
+  @include map-to-mixin($typography-body-lead-map);
+  @if $color != null {
+    color: $color !important;
+  }
+};
+
+$typography-body-text-m-map: (
+  color: get-color('Serpentine brute'),
+  font-family: $font-family,
+  font-size: 14pt,
+  font-style: normal,
+  font-weight: 300,
+  line-height: 1.25,
+);
+@mixin typography-body-text-m($color: null) {
+  @include map-to-mixin($typography-body-text-m-map);
+  @if $color != null {
+    color: $color !important;
+  }
+};
+
+$typography-body-text-s-map: (
+  color: get-color('Serpentine brute'),
+  font-family: $font-family,
+  font-size: 12pt,
+  font-style: normal,
+  font-weight: 300,
+  line-height: 1.25,
+);
+@mixin typography-body-text-s($color: null) {
+  @include map-to-mixin($typography-body-text-s-map);
+  @if $color != null {
+    color: $color !important;
+  }
+};
+
+$typography-body-text-xs-map: (
+  color: get-color('Serpentine brute'),
+  font-family: $font-family,
+  font-size: 10pt,
+  font-style: normal,
+  font-weight: 300,
+  line-height: 1.2,
+);
+@mixin typography-body-text-xs($color: null) {
+  @include map-to-mixin($typography-body-text-xs-map);
+  @if $color != null {
+    color: $color !important;
+  }
+};
+
+$typography-page-title-map: (
+  color: get-color('Saphir'),
+  font-family: 'Baloo',
+  font-size: 38pt,
+  font-style: normal,
+  font-weight: 500,
+  line-height: normal,
+  letter-spacing: 0.01rem,
+);
+@mixin typography-page-title($color: null) {
+  @include map-to-mixin($typography-page-title-map);
+  @if $color != null {
+    color: $color !important;
+  }
+};
+
+$typography-page-subtitle-map: (
+  color: get-color('Saphir'),
+  font-family: 'Quicksand',
+  font-size: 2.4rem,
+  font-style: normal,
+  font-weight: 500,
+  line-height: normal,
+);
+@mixin typography-page-subtitle($color: null) {
+  @include map-to-mixin($typography-page-subtitle-map);
+  @if $color != null {
+    color: $color !important;
+  }
+};
+
+$typography-page-section-title-map: (
+  color: get-color('Anthracite'),
+  font-family: $font-family,
+  font-size: 1.8rem,
+  font-style: normal,
+  font-weight: 300,
+  line-height: 1.279,
+);
+@mixin typography-page-section-title($color: null) {
+  @include map-to-mixin($typography-page-section-title-map);
+  @if $color != null {
+    color: $color !important;
+  }
+};
+
+$typography-blockquote-map: (
+  color: get-color('Saphir'),
+  font-family: 'Patrick Hand',
+  font-size: 20pt,
+  font-style: normal,
+  font-weight: 500,
+  line-height: 1.15,
+);
+@mixin typography-blockquote($color: null) {
+  @include map-to-mixin($typography-blockquote-map);
+  @if $color != null {
+    color: $color !important;
+  }
+};
+
+$typography-blockquote-quote-map: (
+  color: get-color('Banane'),
+  font-family: 'Baloo',
+  font-size: 68pt,
+  font-style: normal,
+  font-weight: 500,
+  line-height: 0,
+);
+@mixin typography-blockquote-quote($color: null) {
+  @include map-to-mixin($typography-blockquote-quote-map);
+  @if $color != null {
+    color: $color !important;
+  }
+};
+
+.text-body-lead {
+  @include typography-body-lead();
+}
+.text-body-text-m {
+  @include typography-body-text-m();
+}
+.text-body-text-s {
+  @include typography-body-text-s();
+}
+.text-body-text-xs {
+  @include typography-body-text-xs();
+}
+.text-page-title {
+  @include typography-page-title();
+}
+.text-page-subtitle {
+  @include typography-page-subtitle();
+}
+.text-page-section-title {
+  @include typography-page-section-title();
+}
+.text-blockquote {
+  @include typography-blockquote();
+}
+.text-blockquote-quote {
+  @include typography-blockquote-quote();
+}
