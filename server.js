@@ -47,6 +47,8 @@ app.prepare().then(() => {
     app.use(helmet());
 
     const httpsServer = https.createServer(credentials, expressApp);
-    httpsServer.listen(443, () => {});
+    httpsServer.listen(443, (err) => {
+      if (err) throw err;
+    });
   }
 });
