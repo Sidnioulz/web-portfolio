@@ -28,11 +28,7 @@ app.prepare().then(() => {
   expressApp.get('*', (req, res) => handle(req, res));
   if (!dev) {
     expressApp.use(helmet());
-    expressApp.all('*', (req, res, nextHandler) => (
-      (req.secure)
-        ? nextHandler()
-        : res.redirect(`https://${req.hostname}${req.url}`)
-    ));
+    expressApp.all('*', (req, res) => res.redirect(301, `https://${req.hostname}${req.url}`));
   }
 
   // Start the HTTP server available in all environments.
@@ -53,7 +49,7 @@ app.prepare().then(() => {
       ca,
     };
 
-    const httpsServer = https.createServer(credentials, expressApp);
+    const httpsServer = https.createServer(credentials, app);
     httpsServer.listen(443, (err) => {
       if (err) throw err;
     });
