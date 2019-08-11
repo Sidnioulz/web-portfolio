@@ -54,6 +54,8 @@ https://medium.com/@diamondgfx/nextjs-lessons-learned-part-2-f1781237cf5c
 ### Setup Security Layer
 * SSL with [LetsEncrypt](https://letsencrypt.org/)
 * cron certbot renew ([doc](https://certbot.eff.org/docs/using.html#renewing-certificates))
+* Allow disabling 443 initially when setting up, even with prod build.
+* Pass domain name as env variable
 
 ### GraphQL
 * Set up a storage solution (https://www.apollographql.com/docs/apollo-server/v1/ / https://softchris.github.io/pages/graphql-express.html / https://medium.com/codingthesmartway-com-blog/creating-a-graphql-server-with-node-js-and-express-f6dddc5320e1)

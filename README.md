@@ -26,6 +26,14 @@ Visit [localhost:3000](localhost:3000) to get started.
 
 I use CircleCI to deploy automatically after each commit. You'll probably want to familiarise yourself with the [CircleCI tutorial for JavaScript](https://circleci.com/docs/2.0/language-javascript/).
 
+### SSL Certificates
+The server is pre-configured to provide a static folder than can be used for ACME challenges, and is also pre-configured to read certificates from `/etc/letsencrypt/live` when run in production mode.
+
+To setup your certificates, you'll need to `cd` to the web-portfolio folder on your server, and pass a command to certbot to the tune of:
+```
+certbot certonly --webroot -w ./acme-challenge -d <yourdomain.com>
+```
+
 ### My Server
 
 I manually SCP my build to my personal Linux server, which is set up to have a `circleci` user with read/write access to all of `/var/www`.
