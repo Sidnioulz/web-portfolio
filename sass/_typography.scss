@@ -1,38 +1,6 @@
 @import 'util';
 @import 'color';
-
-
-@font-face {
-  font-family: 'Museo Sans';
-  font-display: fallback;
-  font-weight: 300;
-  font-style: normal;
-  src: local('Museo Sans Light'), local('MuseoSans_300'), url('/static/fonts/MuseoSans_300.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'Baloo';
-  font-display: fallback;
-  font-weight: 400;
-  font-style: normal;
-  src: local('Baloo Regular'), local('Baloo-Regular'), url('/static/fonts/Baloo-Regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Quicksand';
-  font-display: fallback;
-  font-weight: 400;
-  font-style: normal;
-  src: local('Quicksand Regular'), local('Quicksand-Regular'), url('/static/fonts/Quicksand-Regular.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'PatrickHand';
-  font-display: fallback;
-  font-weight: 400;
-  font-style: normal;
-  src: local('PatrickHand Regular'), local('PatrickHand-Regular'), url('/static/fonts/PatrickHand-Regular.ttf') format('truetype');
-}
+@import 'fonts';
 
 
 $typography-body-lead-map: (
