@@ -5,6 +5,7 @@ import json from 'data/publications.json';
 const Page = props => (
   <>
     <h1>{props.publication.title}</h1>
+    <blockquote>{props.publication.authors.join(' · ')}</blockquote>
     {props.publication.description.split('\n').map(p => (<p>{p}</p>))}
   </>
 );
