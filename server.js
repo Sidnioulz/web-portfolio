@@ -5,7 +5,7 @@ const http = require('http');
 
 // HTTPS / Security dependencies.
 const fs = require('fs');
-const http2 = require('http2');
+const https = require('https');
 const helmet = require('helmet');
 
 // Read env and initialise Next.
@@ -43,14 +43,17 @@ app.prepare().then(() => {
 
   // On production, start the HTTPS server too.
   if (!dev) {
+    const privateKey = fs.readFileSync('/etc/letsencrypt/live/sdl.design/privkey.pem', 'utf8');
+    const certificate = fs.readFileSync('/etc/letsencrypt/live/sdl.design/cert.pem', 'utf8');
+    const ca = fs.readFileSync('/etc/letsencrypt/live/sdl.design/chain.pem', 'utf8');
+
     const credentials = {
-      key: fs.readFileSync('/etc/letsencrypt/live/sdl.design/privkey.pem', 'utf8'),
-      cert: fs.readFileSync('/etc/letsencrypt/live/sdl.design/cert.pem', 'utf8'),
-      ca: fs.readFileSync('/etc/letsencrypt/live/sdl.design/chain.pem', 'utf8'),
+      key: privateKey,
+      cert: certificate,
+      ca,
     };
 
-    const httpsServer = http2.createSecureServer(credentials);
-    httpsServer.on('request', (req, res) => app.render(req, res, req.url, req.query));
+    const httpsServer = https.createServer(credentials, expressApp);
     httpsServer.listen(443, (err) => {
       if (err) throw err;
     });
