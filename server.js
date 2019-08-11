@@ -1,8 +1,12 @@
-const fs = require('fs');
-const http = require('http');
-const https = require('https');
+// Base dependencies.
 const next = require('next');
 const express = require('express');
+const http = require('http');
+
+// HTTPS / Security dependencies.
+const fs = require('fs');
+const https = require('https');
+const helmet = require('helmet');
 
 // Read env and initialise Next.
 const port = parseInt(process.env.PORT, 10) || 3000;
@@ -40,7 +44,9 @@ app.prepare().then(() => {
       ca,
     };
 
-    const httpsServer = https.createServer(credentials, app);
+    app.use(helmet());
+
+    const httpsServer = https.createServer(credentials, expressApp);
     httpsServer.listen(443, () => {});
   }
 });
