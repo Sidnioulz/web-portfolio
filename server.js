@@ -25,9 +25,8 @@ app.prepare().then(() => {
   );
 
   // In production, add Helmet headers and redirect to HTTPS. In dev, serve in HTTP.
-  if (dev) {
-    expressApp.get('*', (req, res) => handle(req, res));
-  } else {
+  expressApp.get('*', (req, res) => handle(req, res));
+  if (!dev) {
     expressApp.use(helmet());
     expressApp.all('*', (req, res, nextHandler) => (
       (req.secure)
