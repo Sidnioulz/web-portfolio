@@ -44,7 +44,7 @@ app.prepare().then(() => {
       ca,
     };
 
-    app.use(helmet());
+    expressApp.use(helmet());
 
     const httpsServer = https.createServer(credentials, expressApp);
     httpsServer.listen(443, (err) => {
