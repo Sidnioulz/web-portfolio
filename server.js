@@ -23,6 +23,9 @@ app.prepare().then(() => {
       maxage: dev ? '0' : '365d',
     }),
   );
+  if (!dev) {
+    expressApp.use(helmet());
+  }
 
   expressApp.get('*', (req, res) => handle(req, res));
 
@@ -43,8 +46,6 @@ app.prepare().then(() => {
       cert: certificate,
       ca,
     };
-
-    expressApp.use(helmet());
 
     const httpsServer = https.createServer(credentials, expressApp);
     httpsServer.listen(443, (err) => {
