@@ -38,6 +38,7 @@ And because Redux is noisy, streamline the definition process *if I end up keepi
 ### Go too far
 * https://redux-observable.js.org/
 * Bugsnag
+* CircleCI performance with Lighthouse CLI https://web.dev/incorporate-performance-budgets-into-your-build-tools/
 
 ### Data Prefetching Strategies
 Consider using `componentDidMount` instead of `getInitialProps`, see https://medium.com/@diamondgfx/nextjs-lessons-learned-part-2-f1781237cf5c.

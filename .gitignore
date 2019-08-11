@@ -4,6 +4,9 @@
 # Build directory
 /.next
 
+# Directory used on server to renew Let's Encrypt certs
+/acme-challenge
+
 # Environment files
 .env
 .env.local
