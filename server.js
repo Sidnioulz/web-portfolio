@@ -29,7 +29,11 @@ app.prepare().then(() => {
     expressApp.get('*', (req, res) => handle(req, res));
   } else {
     expressApp.use(helmet());
-    expressApp.all('*', (req, res) => res.redirect(`https://${req.headers.host}${req.url}`));
+    expressApp.all('*', (req, res, nextHandler) => (
+      (req.secure)
+        ? nextHandler()
+        : res.redirect(`https://${req.hostname}${req.url}`)
+    ));
   }
 
   // Start the HTTP server available in all environments.
