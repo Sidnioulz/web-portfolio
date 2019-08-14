@@ -5,7 +5,7 @@ const Header = props => (
   <header className={`${props.className ? `${props.className} ` : ''}${css.Header}`}>
     <div className={css.logoContainer}>
       <Link href="/">
-        <a><img className={css.logo} src="/static/images/logo/logo-1x.png" alt="Steve D. Lazaro" /></a>
+        <a><img className={css.logo} src="/static/images/logo/logo-4x.png" alt="Steve D. Lazaro" /></a>
       </Link>
     </div>
     <nav>
