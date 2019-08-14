@@ -14,25 +14,26 @@ class PublicationsPage extends React.Component {
   }
 
   render() {
-    const pubsPerYear = {};
-    this.props.publications.forEach((pub) => {
-      const pubsOnThatYear = pubsPerYear[pub.year] || [];
-      pubsOnThatYear.push(pub);
-      pubsPerYear[pub.year] = pubsOnThatYear;
-    });
+    // const pubsPerYear = {};
+    // this.props.publications.forEach((pub) => {
+    //   const pubsOnThatYear = pubsPerYear[pub.year] || [];
+    //   pubsOnThatYear.push(pub);
+    //   pubsPerYear[pub.year] = pubsOnThatYear;
+    // });
 
     return (
       <>
         <PortfolioHead title="Publications & Talks" />
         <h1>Publications & Talks</h1>
-        {
+        {this.props.publications.map(pub => (<PubLink key={pub.key} publication={pub} />))}
+        {/*
           Object.entries(pubsPerYear).sort((a, b) => b[0] - a[0]).map(([year, pubs]) => (
             <div key={year}>
               <h5 className={css['year-group']}>{year}</h5>
               {pubs.map(pub => (<PubLink key={pub.key} publication={pub} />))}
             </div>
           ))
-        }
+        */}
       </>
     );
   }
