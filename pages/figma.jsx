@@ -2,7 +2,7 @@ import fetch from 'isomorphic-unfetch';
 import PropTypes from 'prop-types';
 import withLayout from 'components/_layout';
 import PortfolioHead from 'components/PortfolioHead';
-import StyleColorBlock from 'components/StyleColorBlock';
+import StyleColorBlock from 'components/figma/StyleColorBlock';
 
 function figmaRgb2hex(fill) {
   return `#${

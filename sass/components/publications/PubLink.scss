@@ -1,0 +1,65 @@
+@import 'sass/base';
+
+.PubLink {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: repeat(2, auto);
+  grid-gap: 5px 12px;
+  height: 56px;
+  max-width: 636px;
+
+  .title {
+    grid-column-start: 1;
+    grid-column-end: span 1;
+    grid-row-start: 1;
+    grid-row-end: span 1;
+
+    @include typography-body-text-m();
+    @include link-decorator($color: get-color('Anthracite'), $line: false);
+  }
+
+  .meta {
+    grid-column-start: 1;
+    grid-column-end: span 1;
+    grid-row-start: 2;
+    grid-row-end: span 1;
+
+    @include typography-body-text-s();
+    color: get-color('Saphir');
+
+    .venue {
+      display: inline-block;
+      width: 120px;
+      margin-right: 6px;
+    }
+
+    .authors {
+
+    }
+
+    .year {
+      display: none;
+    }
+  }
+
+  .buttons {
+    grid-column-start: 2;
+    grid-column-end: span 1;
+    grid-row-start: 1;
+    grid-row-end: span 2;
+
+    button {
+      display: block;
+      height: 24px;
+      width: 24px;
+    }
+
+    button + button {
+      margin-top: 8px;
+    }
+  }
+}
+
+.PubLink + .PubLink {
+  margin-top: 24px;
+}

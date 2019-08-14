@@ -6,10 +6,11 @@
 $typography-body-lead-map: (
   color: get-color('Anthracite'),
   font-family: 'Museo Sans',
-  font-size: 1.8rem,
+  font-size: 18px,
   font-style: normal,
   font-weight: 300,
   line-height: 1.279,
+  text-transform: none,
 );
 @mixin typography-body-lead($color: null) {
   @include map-to-mixin($typography-body-lead-map);
@@ -21,10 +22,11 @@ $typography-body-lead-map: (
 $typography-body-text-m-map: (
   color: get-color('Serpentine brute'),
   font-family: 'Museo Sans',
-  font-size: 14pt,
+  font-size: 14px,
   font-style: normal,
   font-weight: 300,
   line-height: 1.25,
+  text-transform: none,
 );
 @mixin typography-body-text-m($color: null) {
   @include map-to-mixin($typography-body-text-m-map);
@@ -36,10 +38,11 @@ $typography-body-text-m-map: (
 $typography-body-text-s-map: (
   color: get-color('Serpentine brute'),
   font-family: 'Museo Sans',
-  font-size: 12pt,
+  font-size: 12px,
   font-style: normal,
   font-weight: 300,
   line-height: 1.25,
+  text-transform: none,
 );
 @mixin typography-body-text-s($color: null) {
   @include map-to-mixin($typography-body-text-s-map);
@@ -51,10 +54,11 @@ $typography-body-text-s-map: (
 $typography-body-text-xs-map: (
   color: get-color('Serpentine brute'),
   font-family: 'Museo Sans',
-  font-size: 10pt,
+  font-size: 10px,
   font-style: normal,
   font-weight: 300,
   line-height: 1.2,
+  text-transform: none,
 );
 @mixin typography-body-text-xs($color: null) {
   @include map-to-mixin($typography-body-text-xs-map);
@@ -66,11 +70,12 @@ $typography-body-text-xs-map: (
 $typography-page-title-map: (
   color: get-color('Saphir'),
   font-family: 'Baloo',
-  font-size: 38pt,
+  font-size: 38px,
   font-style: normal,
   font-weight: 500,
   line-height: normal,
-  letter-spacing: 0.01rem,
+  text-transform: none,
+  letter-spacing: 0.1px,
 );
 @mixin typography-page-title($color: null) {
   @include map-to-mixin($typography-page-title-map);
@@ -82,10 +87,11 @@ $typography-page-title-map: (
 $typography-page-subtitle-map: (
   color: get-color('Saphir'),
   font-family: 'Quicksand',
-  font-size: 2.4rem,
+  font-size: 24px,
   font-style: normal,
   font-weight: 500,
   line-height: normal,
+  text-transform: none,
 );
 @mixin typography-page-subtitle($color: null) {
   @include map-to-mixin($typography-page-subtitle-map);
@@ -97,10 +103,11 @@ $typography-page-subtitle-map: (
 $typography-page-section-title-map: (
   color: get-color('Anthracite'),
   font-family: 'Museo Sans',
-  font-size: 1.8rem,
+  font-size: 18px,
   font-style: normal,
   font-weight: 300,
   line-height: 1.279,
+  text-transform: none,
 );
 @mixin typography-page-section-title($color: null) {
   @include map-to-mixin($typography-page-section-title-map);
@@ -112,10 +119,11 @@ $typography-page-section-title-map: (
 $typography-blockquote-map: (
   color: get-color('Saphir'),
   font-family: 'PatrickHand',
-  font-size: 20pt,
+  font-size: 20px,
   font-style: normal,
   font-weight: 500,
   line-height: 1.15,
+  text-transform: none,
 );
 @mixin typography-blockquote($color: null) {
   @include map-to-mixin($typography-blockquote-map);
@@ -127,10 +135,11 @@ $typography-blockquote-map: (
 $typography-blockquote-quote-map: (
   color: get-color('Banane'),
   font-family: 'Baloo',
-  font-size: 68pt,
+  font-size: 68px,
   font-style: normal,
   font-weight: 500,
   line-height: 0,
+  text-transform: none,
 );
 @mixin typography-blockquote-quote($color: null) {
   @include map-to-mixin($typography-blockquote-quote-map);
@@ -138,31 +147,3 @@ $typography-blockquote-quote-map: (
     color: $color !important;
   }
 };
-
-.text-body-lead {
-  @include typography-body-lead();
-}
-.text-body-text-m {
-  @include typography-body-text-m();
-}
-.text-body-text-s {
-  @include typography-body-text-s();
-}
-.text-body-text-xs {
-  @include typography-body-text-xs();
-}
-.text-page-title {
-  @include typography-page-title();
-}
-.text-page-subtitle {
-  @include typography-page-subtitle();
-}
-.text-page-section-title {
-  @include typography-page-section-title();
-}
-.text-blockquote {
-  @include typography-blockquote();
-}
-.text-blockquote-quote {
-  @include typography-blockquote-quote();
-}

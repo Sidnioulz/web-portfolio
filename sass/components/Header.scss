@@ -6,7 +6,7 @@
 	flex-flow: row nowrap;
   justify-content: space-between;
   max-width: 100%;
-  margin: 0 0 12px;
+  margin: 0 0 18px;
   min-height: 114px; // prevents FOUC on nav height and page-wrapper content position.
 	width: 100vw;
 
@@ -27,11 +27,11 @@
 
     a {
       @include typography-body-lead();
-      @include link-decorator($height: 2.3rem);
+      @include link-decorator($height: 1.4375em);
     }
 
     a + a {
-      margin-left: 1.2rem;
+      margin-left: 0.75em;
     }
   }
 }

@@ -4,16 +4,19 @@ $colors: (
   'Anthracite': #042a2b,
   'Banane': #fae4b2,
   'Blanc': #fbfbfb,
-  'Ciel': #86cee8,
-  'Cuivre rose': #a87b7a,
+  'Ciel': #8dddfa,
+  'Cuivre rose': #de7c6f,
+  'Grenade': #e93b3b,
   'Lagon': #35aed9,
   'Mousse': #586d5e,
   'Mousse délavée': #9ba79e,
+  'Pierre': #7a7a7a,
   'Pistache': #dae2cd,
   'Poudre': #dfadac,
   'Poussin': #ffea81,
   'Saphir': #1185c2,
   'Serpentine brute': #395758,
+  'Souris': #b5b5b5,
   'Vanille': #f5f1e6,
 );
 
@@ -22,23 +25,11 @@ $colors: (
 }
 
 $semantic-colors: (
- danger: get-color('Poudre'),
- danger-dark: get-color('Cuivre rose'),
- success: get-color('Mousse délavée'),
- success-dark: get-color('Mousse'),
- primary: get-color('Saphir'),
- secondary: get-color('Poussin'),
- muted: get-color('Serpentine brute')
+  primary: get-color('Saphir'),
+  secondary: get-color('Poussin'),
+  danger: get-color('Grenade'),
+  success: get-color('Mousse délavée'),
+  hard: get-color('Anthracite'),
+  soft: get-color('Serpentine brute'),
+  muted: get-color('Souris')
 );
-
-@mixin color-modifiers($attribute: 'color', $prefix: '-') {
-  @each $name, $hex in $semantic-colors {
-    &#{$prefix}#{$name} {
-      #{$attribute}: $hex !important;
-    }
-  }
-}
-
-.text {
-  @include color-modifiers;
-}

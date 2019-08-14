@@ -10,6 +10,7 @@ const publication = PropTypes.exact({
   href: PropTypes.string.isRequired,
   istalk: PropTypes.bool.isRequired,
   publication: PropTypes.string.isRequired,
+  publicationShort: PropTypes.string.isRequired,
   publisher: PropTypes.string.isRequired,
   /* For peer-reviewed publications and theses */
   bibtex: PropTypes.string,

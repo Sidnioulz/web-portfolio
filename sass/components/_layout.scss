@@ -1,11 +1,11 @@
 @import 'sass/base';
 
-html, body {
-  margin: 0;
-  font-size: 62.5%;
+html  {
+  font-size: 100%; // Has to be 100% for external CSS integration.
 
-  * {
-    @include typography-body-text-s();
+  body {
+    margin: 0;
+    @include typography-body-text-m();
   }
 }
 
@@ -32,6 +32,11 @@ h2 + h3 {
   margin-top: 30px;
 }
 
+h5 {
+  @include typography-body-text-s();
+  color: get-color('Mousse');
+}
+
 
 .Layout {
 	display: flex;
@@ -45,7 +50,7 @@ h2 + h3 {
 
   > .page-wrapper {
     flex: 1 0 auto;
-    padding: 0 60px;
+    padding: 0 80px;
     p a {
       @include link-decorator();
     }

@@ -1,0 +1,92 @@
+@import "sass/typography";
+
+@mixin button-ui(
+  $background-color: transparent,
+  $color: get-color('Serpentine brute'),
+  $border-color: get-color('Pistache'),
+  $border-width: 1px,
+  $border-radius: 2px,
+  $border-style: solid,
+  $padding: 6px,
+  $inner-spacing: 6px,
+  $hover-color: get-color('Anthracite'),
+  $hover-background-color: get-color('Ciel'),
+  $hover-border-color: get-color('Lagon'),
+  $active-color: get-color('Anthracite'),
+  $active-background-color: mix(get-color('Lagon'), get-color('Ciel'), 50%),
+  $active-border-color: get-color('Saphir'),
+  $disabled-color: get-color('Pierre'),
+  $disabled-text-opacity: 0.7,
+  $disabled-background-color: mix(white, get-color('Souris'), 50%),
+  $disabled-border-color: rgba(get-color('Pierre'), 0.2),
+) {
+  cursor: pointer;
+  display: inline-flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  border-width: $border-width;
+  border-style: $border-style;
+  border-color: $border-color;
+  border-radius: $border-radius;
+  padding: $padding;
+
+  background-color: $background-color;
+
+  transition:
+    background-color 200ms cubic-bezier(.4, 0, .2, 1),
+    border-color 200ms cubic-bezier(.4, 0, .2, 1);
+
+
+  .ButtonIcon {
+    flex: 0 0 auto;
+    &:before {
+      color: $color;
+    }
+  }
+
+  .ButtonInner {
+    flex: 1 0 auto;
+    color: $color;
+    @include typography-body-lead($color);
+  }
+
+  .ButtonIcon + .ButtonInner {
+    margin-left: $inner-spacing;
+  }
+
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+      .ButtonIcon,
+      .ButtonInner {
+        color: $hover-color;
+      }
+    background-color: $hover-background-color;
+    border-color: $hover-border-color;
+  }
+
+  &:active:not(:disabled) {
+      .ButtonIcon,
+      .ButtonInner {
+        color: $active-color;
+      }
+    background-color: $active-background-color;
+    border-color: $active-border-color;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+
+    .ButtonIcon,
+    .ButtonInner {
+      color: $disabled-color;
+      opacity: $disabled-text-opacity;
+    }
+    background-color: $disabled-background-color;
+    border-color: $disabled-border-color;
+  }
+}
+
+.Button {
+  @include button-ui();
+}

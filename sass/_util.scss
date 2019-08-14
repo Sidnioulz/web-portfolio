@@ -4,12 +4,19 @@
   }
 }
 
-@mixin link-decorator($height: null) {
+@mixin link-decorator($height: null, $color: null, $line: null) {
   background-color: transparent;
-  background-image: url('/static/images/hyperlink-sprite.png');
-  background-repeat: repeat-x;
-  background-position: 0 -185px; // up to 23 text height - 200 sprite height
-  color: get-color('Anthracite');
+  @if $line != false {
+    background-image: url('/static/images/hyperlink-sprite.png');
+    background-repeat: repeat-x;
+    background-position: 0 -185px; // up to 23 text height - 200 sprite height
+  }
+
+  @if $height != null {
+    color: $color;
+  } @else {
+    color: get-color('Anthracite');
+  }
   text-decoration: none;
   transition: background-color 250ms cubic-bezier(.4, 0, .2, 1);
 
@@ -17,9 +24,13 @@
     height: $height;
   }
 
-  &:hover,
-  &:focus {
-    background-position: 0 15px; // up to 23 text height - 8 img height
-    background-color: get-color('Poussin');
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    @if $line != false {
+      background-position: 0 15px; // up to 23 text height - 8 img height
+      background-color: get-color('Poussin');
+    } @else {
+      background-color: get-color('Vanille');
+    }
   }
 }
