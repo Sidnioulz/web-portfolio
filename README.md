@@ -11,6 +11,7 @@ The goal of this project is both for me to have a Web presence and to practice a
 git clone https://github.com/Sidnioulz/web-portfolio.git
 cd web-portfolio
 npm install
+echo SASS_PATH=./node_modules:./sass >> ~/.env
 ```
 
 ## Build and Use Locally
@@ -34,6 +35,7 @@ To setup your certificates, you'll need to `cd` to the web-portfolio folder on y
 certbot certonly --webroot -w ./acme-challenge -d <yourdomain.com>
 ```
 
+
 ### My Server
 
 I manually SCP my build to my personal Linux server, which is set up to have a `circleci` user with read/write access to all of `/var/www`.
@@ -41,6 +43,10 @@ I manually SCP my build to my personal Linux server, which is set up to have a `
 CircleCI has a copy of a private RSA key designed specifically to allow logging in as this user, as per the [CircleCI SSH Doc](https://circleci.com/docs/2.0/add-ssh-key/). My server also has a [GitHub Deploy Key](https://developer.github.com/v3/guides/managing-deploy-keys) to allow it to pull the latest version of the server configuration and dependencies.
 
 I have a [systemd](https://www.freedesktop.org/wiki/Software/systemd/) service set up to start my Web portfolio using `npm run start`, so I update my app on the server, replace the old build with the one made by CircleCI (less CO2 output than rebuilding!), and restart my service.
+
+### CircleCI Environment
+
+You will need to set the variable `SASS_PATH` to `./node_modules:./sass`. You may also need a `FIGMA_TOKEN` variable. Finally, you may need `SSH_HOST` and `SSH_USER` if you don't change the deployment pipeline.
 
 ### Alternatives
 
