@@ -1,5 +1,4 @@
 import fetch from 'isomorphic-unfetch';
-import withLayout from 'components/_layout';
 import PortfolioHead from 'components/PortfolioHead';
 import moment from 'moment';
 import Link from 'next/link';
@@ -36,4 +35,4 @@ Page.getInitialProps = async function () {
   return { lastCommit: resJson.commit.commit.author.date };
 };
 
-export default withLayout(Page);
+export default Page;

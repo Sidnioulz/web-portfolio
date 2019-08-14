@@ -1,6 +1,4 @@
-import withLayout from 'components/_layout';
 import Button from 'components/Button';
-import Icon from 'components/Icon';
 import PortfolioHead from 'components/PortfolioHead';
 import TextField, { HelperText, Input } from '@material/react-text-field';
 import css from 'sass/components/react-text-field.scss';
@@ -85,4 +83,4 @@ const Contact = () => (
   </>
 );
 
-export default withLayout(Contact);
+export default Contact;

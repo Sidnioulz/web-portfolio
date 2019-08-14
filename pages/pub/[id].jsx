@@ -1,4 +1,3 @@
-import withLayout from 'components/_layout';
 import PortfolioPropTypes from 'data/portfolio-prop-types';
 import json from 'data/publications.json';
 
@@ -19,4 +18,4 @@ Page.getInitialProps = async function (context) {
   return { publication: json.find(pub => pub.key === id) };
 };
 
-export default withLayout(Page);
+export default Page;

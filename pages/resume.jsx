@@ -1,4 +1,3 @@
-import withLayout from 'components/_layout';
 import PortfolioHead from 'components/PortfolioHead';
 
 const Resume = () => (
@@ -11,4 +10,4 @@ const Resume = () => (
   </>
 );
 
-export default withLayout(Resume);
+export default Resume;
