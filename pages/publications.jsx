@@ -4,7 +4,7 @@ import withLayout from 'components/_layout';
 import PortfolioHead from 'components/PortfolioHead';
 import PubLink from 'components/publications/PubLink';
 import json from 'data/publications.json';
-import css from 'sass/pages/publications.scss';
+// import css from 'sass/pages/publications.scss';
 
 class PublicationsPage extends React.Component {
   static async getInitialProps() {
