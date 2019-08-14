@@ -2,12 +2,12 @@
 
 @font-face {
   font-family: 'portfolio';
-  src: url('/static/fonts/portfolio.eot?25530018');
-  src: url('/static/fonts/portfolio.eot?25530018#iefix') format('embedded-opentype'),
-       url('/static/fonts/portfolio.woff2?25530018') format('woff2'),
-       url('/static/fonts/portfolio.woff?25530018') format('woff'),
-       url('/static/fonts/portfolio.ttf?25530018') format('truetype'),
-       url('/static/fonts/portfolio.svg?25530018#portfolio') format('svg');
+  src: url('/static/fonts/portfolio.eot?99675902');
+  src: url('/static/fonts/portfolio.eot?99675902#iefix') format('embedded-opentype'),
+       url('/static/fonts/portfolio.woff2?99675902') format('woff2'),
+       url('/static/fonts/portfolio.woff?99675902') format('woff'),
+       url('/static/fonts/portfolio.ttf?99675902') format('truetype'),
+       url('/static/fonts/portfolio.svg?99675902#portfolio') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -56,4 +56,5 @@
   .icon-download:before { content: '\e801'; } /* '' */
   .icon-video:before { content: '\e802'; } /* '' */
   .icon-quote:before { content: '\e803'; } /* '' */
+  .icon-copy:before { content: '\e805'; } /* '' */
 }
