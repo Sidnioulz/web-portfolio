@@ -1,6 +1,7 @@
 import css from 'sass/components/publications/PubLink.scss';
 import Link from 'next/link';
 import InteractiveIcon from 'components/InteractiveIcon';
+import InteractiveDownloadIcon from 'components/InteractiveDownloadIcon';
 import PortfolioPropTypes from 'data/portfolio-prop-types';
 
 // TODO connect buttons
@@ -16,27 +17,22 @@ const PubLink = props => (
       {
         props.publication.istalk
           ? (
-            <InteractiveIcon
+            <InteractiveDownloadIcon
               icon="video"
-              data-href={props.publication.href}
               tooltip="Watch Talk"
-              onClick={() => {
-                window.location = props.publication.mediahref;
-              }}
+              download={false}
+              href={props.publication.mediahref}
             />
           )
           : (
-            <InteractiveIcon
+            <InteractiveDownloadIcon
               icon="download"
-              data-href={props.publication.href}
               tooltip="Download PDF"
-              onClick={() => {
-                window.location = props.publication.href;
-              }}
+              href={props.publication.href}
             />
           )
       }
-      <InteractiveIcon icon="quote" data-bibtex={props.publication.bibtex} tooltip="Cite" />
+      <InteractiveIcon icon="quote" data-bibtex={props.publication.bibtex} tooltip="Cite" handler={() => console.log('cite')} />
     </div>
     <div className={css.meta}>
       <span className={css.venue}>

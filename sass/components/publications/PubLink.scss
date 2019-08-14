@@ -54,7 +54,7 @@
       width: 24px;
     }
 
-    button + button {
+    > * + * {
       margin-top: 8px;
     }
   }
