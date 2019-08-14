@@ -1,0 +1,29 @@
+@import 'sass/color';
+@import 'sass/fonts';
+
+$mdc-theme-primary: map-get($semantic-colors, 'primary');
+$mdc-theme-on-primary: if(mdc-theme-contrast-tone($mdc-theme-primary) == "dark", get-color('Anthracite'), get-color('White'));
+$mdc-theme-accent: map-get($semantic-colors, 'secondary'); // baseline teal, 600 tone
+$mdc-theme-secondary: $mdc-theme-accent;
+$mdc-theme-on-secondary: if(mdc-theme-contrast-tone($mdc-theme-secondary) == "dark", get-color('Anthracite'), get-color('White'));
+$mdc-theme-background: get-color('White'); // White
+$mdc-theme-surface: get-color('Vanille');
+$mdc-theme-on-surface: if(mdc-theme-contrast-tone($mdc-theme-surface) == "dark", get-color('Anthracite'), get-color('White'));
+$mdc-theme-error: map-get($semantic-colors, 'danger');
+$mdc-theme-on-error: if(mdc-theme-contrast-tone($mdc-theme-error) == "dark", get-color('Anthracite'), get-color('White'));
+$mdc-theme-text-colors: (
+  dark: (
+    primary: get-color('Anthracite'),
+    secondary: get-color('Serpentine brute'),
+    hint: get-color('Mousse délavée'),
+    disabled: rgba(get-color('Pierre'), .7),
+    icon: rgba(get-color('Serpentine brute'), .5)
+  ),
+  light: (
+    primary: white,
+    secondary: rgba(white, .7),
+    hint: rgba(white, .5),
+    disabled: rgba(white, .5),
+    icon: rgba(white, .5)
+  )
+);

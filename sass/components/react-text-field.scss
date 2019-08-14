@@ -1,0 +1,8 @@
+body :global {
+  @import 'sass/material-theme';
+  @import '@material/react-text-field/index.scss';
+}
+
+.TextField {
+  font-size: 100%;
+}
