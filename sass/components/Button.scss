@@ -1,77 +1,82 @@
 @import "sass/typography";
 
-@mixin button-ui(
-  $background-color: transparent,
-  $color: get-color('Serpentine brute'),
-  $border-color: get-color('Pistache'),
-  $border-width: 1px,
-  $border-radius: 2px,
-  $border-style: solid,
-  $padding: 6px,
-  $inner-spacing: 6px,
-  $hover-color: get-color('Anthracite'),
-  $hover-background-color: get-color('Ciel'),
-  $hover-border-color: get-color('Lagon'),
-  $active-color: get-color('Anthracite'),
-  $active-background-color: mix(get-color('Lagon'), get-color('Ciel'), 50%),
-  $active-border-color: get-color('Saphir'),
-  $disabled-color: get-color('Pierre'),
-  $disabled-text-opacity: 0.7,
-  $disabled-background-color: mix(white, get-color('Souris'), 50%),
-  $disabled-border-color: rgba(get-color('Pierre'), 0.2),
-) {
+$button-background-color: transparent !default;
+$button-color: get-color('Serpentine brute') !default;
+$button-border-color: get-color('Pistache') !default;
+$button-border-width: 1px !default;
+$button-border-radius: 2px !default;
+$button-border-style: solid !default;
+$button-padding: 6px !default;
+$button-inner-spacing: 6px !default;
+$button-hover-color: get-color('Anthracite') !default;
+$button-hover-background-color: get-color('Ciel') !default;
+$button-hover-border-color: get-color('Lagon') !default;
+$button-active-color: get-color('Anthracite') !default;
+$button-active-background-color: mix(get-color('Lagon'), get-color('Ciel'), 50%) !default;
+$button-active-border-color: get-color('Saphir') !default;
+$button-disabled-color: get-color('Pierre') !default;
+$button-disabled-text-opacity: 0.7 !default;
+$button-disabled-background-color: mix(white, get-color('Souris'), 50%) !default;
+$button-disabled-border-color: rgba(get-color('Pierre'), 0.2) !default;
+
+.Tooltip {
+  composes: Tooltip from './Tooltip.scss';
+}
+
+.Button {
+  composes: TooltipContainer from './Tooltip.scss';
+
   cursor: pointer;
   display: inline-flex;
   flex-flow: row nowrap;
   align-items: center;
 
-  border-width: $border-width;
-  border-style: $border-style;
-  border-color: $border-color;
-  border-radius: $border-radius;
-  padding: $padding;
+  border-width: $button-border-width;
+  border-style: $button-border-style;
+  border-color: $button-border-color;
+  border-radius: $button-border-radius;
+  padding: $button-padding;
 
-  background-color: $background-color;
+  background-color: $button-background-color;
 
   transition:
     background-color 200ms cubic-bezier(.4, 0, .2, 1),
     border-color 200ms cubic-bezier(.4, 0, .2, 1);
 
-
   .ButtonIcon {
     flex: 0 0 auto;
     &:before {
-      color: $color;
+      color: $button-color;
     }
   }
 
   .ButtonInner {
     flex: 1 0 auto;
-    color: $color;
-    @include typography-body-lead($color);
+    color: $button-color;
+    @include typography-body-lead($button-color);
   }
 
   .ButtonIcon + .ButtonInner {
-    margin-left: $inner-spacing;
+    margin-left: $button-inner-spacing;
   }
 
   &:hover:not(:disabled),
   &:focus:not(:disabled) {
       .ButtonIcon,
       .ButtonInner {
-        color: $hover-color;
+        color: $button-hover-color;
       }
-    background-color: $hover-background-color;
-    border-color: $hover-border-color;
+    background-color: $button-hover-background-color;
+    border-color: $button-hover-border-color;
   }
 
   &:active:not(:disabled) {
       .ButtonIcon,
       .ButtonInner {
-        color: $active-color;
+        color: $button-active-color;
       }
-    background-color: $active-background-color;
-    border-color: $active-border-color;
+    background-color: $button-active-background-color;
+    border-color: $button-active-border-color;
   }
 
   &:disabled {
@@ -79,14 +84,10 @@
 
     .ButtonIcon,
     .ButtonInner {
-      color: $disabled-color;
-      opacity: $disabled-text-opacity;
+      color: $button-disabled-color;
+      opacity: $button-disabled-text-opacity;
     }
-    background-color: $disabled-background-color;
-    border-color: $disabled-border-color;
+    background-color: $button-disabled-background-color;
+    border-color: $button-disabled-border-color;
   }
-}
-
-.Button {
-  @include button-ui();
 }

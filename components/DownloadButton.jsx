@@ -6,19 +6,17 @@ const DownloadButton = props => (
     download={props.download}
     href={props.href}
   >
-    <Button {...props} handler={() => console.log('boop')} />
+    <Button {...props} handler={() => false} />
   </a>
 );
 
 DownloadButton.propTypes = {
-  classNameIcon: PropTypes.string,
   icon: PropTypes.string,
   download: PropTypes.bool,
   href: PropTypes.string.isRequired,
 };
 
 DownloadButton.defaultProps = {
-  classNameIcon: null,
   icon: null,
   download: true,
 };

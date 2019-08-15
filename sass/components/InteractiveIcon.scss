@@ -2,8 +2,8 @@
 @import "sass/components/Button";
 
 .InteractiveIcon {
-  @include button-ui(
-    $border-width: 0,
-    $padding: 0,
-  );
+  composes: Button from "./Button.scss";
+  
+  border-width: 0;
+  padding: 0;
 }
