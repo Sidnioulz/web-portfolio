@@ -56,8 +56,25 @@ $button-disabled-border-color: rgba(get-color('Pierre'), 0.2) !default;
     @include typography-body-lead($button-color);
   }
 
+  &.ButtonSmall {
+      .ButtonIcon {
+        width: 16px;
+        &:before {
+          font-size: 16px;
+        }
+      }
+
+      .ButtonInner {
+        @include typography-body-text-m($button-color);
+      }
+  }
+
   .ButtonIcon + .ButtonInner {
     margin-left: $button-inner-spacing;
+  }
+
+  &:focus {
+    outline: none !important;
   }
 
   &:hover:not(:disabled),

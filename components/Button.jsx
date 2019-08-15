@@ -7,7 +7,7 @@ const Button = props => (
     type={props.type}
     disabled={props.disabled === true || props.disabled === 'disabled' || props.disabled === 'true'}
     onClick={props.handler}
-    className={props.className || css.Button}
+    className={`${props.className} ${css.Button}${props.scale === 'small' ? ` ${css.ButtonSmall}` : ''}`}
   >
     {props.icon ? <Icon className={css.ButtonIcon} name={props.icon} /> : ''}
     {props.children ? <span className={css.ButtonInner}>{props.children}</span> : ''}
@@ -20,6 +20,7 @@ Button.propTypes = {
   icon: PropTypes.string,
   tooltip: PropTypes.string,
   handler: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
+  scale: PropTypes.oneOf(['small', 'medium']),
   type: PropTypes.oneOf(['button', 'reset', 'submit']),
 };
 
@@ -27,6 +28,7 @@ Button.defaultProps = {
   disabled: null,
   icon: null,
   tooltip: null,
+  scale: 'medium',
   type: 'button',
 };
 

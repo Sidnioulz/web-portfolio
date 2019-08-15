@@ -1,0 +1,26 @@
+@import 'sass/base';
+
+.CitationBlobContainer {
+  position: relative;
+}
+
+.CitationBlob {
+  position: absolute;
+  left: 100%;
+  z-index: 2;
+  width: 406px;
+  padding: 6px;
+  border-radius: 3px;
+  border: 1px solid get-color('Souris');
+  background-color: get-color('Blanc');
+
+  pre {
+    overflow-x: scroll;
+    background-color: white;
+    margin: 0 0 12px;
+  }
+}
+
+.Button + .Button {
+  margin-left: 12px;
+}
