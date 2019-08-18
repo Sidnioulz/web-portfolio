@@ -10,6 +10,13 @@ class CitationIcon extends React.Component {
     this.state = {
       isOpen: false,
     };
+    this.toggleState = this.toggleState.bind(this);
+  }
+
+  toggleState() {
+    this.setState(state => ({
+      isOpen: !state.isOpen,
+    }));
   }
 
   render() {
@@ -18,13 +25,14 @@ class CitationIcon extends React.Component {
         <InteractiveIcon
           icon="quote"
           tooltip="Cite"
-          handler={
-            () => this.setState(state => ({
-              isOpen: !state.isOpen,
-            }))
-          }
+          handler={this.toggleState}
         />
-        { this.state.isOpen ? <CitationBlob publication={this.props.publication} /> : '' }
+        { this.state.isOpen ? (
+          <CitationBlob
+            publication={this.props.publication}
+            onClose={this.toggleState}
+          />
+        ) : '' }
       </span>
     );
   }

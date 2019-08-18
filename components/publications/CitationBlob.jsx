@@ -1,16 +1,23 @@
 import css from 'sass/components/publications/CitationBlob.scss';
 import Button from 'components/Button';
+import InteractiveIcon from 'components/InteractiveIcon';
 import DownloadButton from 'components/DownloadButton';
+import PropTypes from 'prop-types';
 import PortfolioPropTypes from 'data/portfolio-prop-types';
 import copy from 'services/Clipboard';
 
 
 const CitationBlob = props => (
   <div className={css.CitationBlob}>
-    <pre>{props.publication.bibtex}</pre>
-    <>
+    <div className={css.Toolbar}>
+      <InteractiveIcon
+        scale="small"
+        icon="close"
+        tooltip="Close"
+        handler={props.onClose}
+      />
+      <div className={css.ToolbarSpacing} />
       <Button
-        className={css.Button}
         scale="small"
         icon="copy"
         handler={() => copy(props.publication.bibtex)}
@@ -18,7 +25,6 @@ const CitationBlob = props => (
         {'Copy'}
       </Button>
       <DownloadButton
-        className={css.Button}
         scale="small"
         icon="download"
         download={`dodier-lazaro_${props.publication.key}.bib`}
@@ -26,11 +32,13 @@ const CitationBlob = props => (
       >
         {'Download'}
       </DownloadButton>
-    </>
+    </div>
+    <pre>{props.publication.bibtex}</pre>
   </div>
 );
 
 CitationBlob.propTypes = {
+  onClose: PropTypes.func.isRequired,
   publication: PortfolioPropTypes.publication.isRequired,
 };
 

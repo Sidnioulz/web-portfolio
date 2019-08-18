@@ -4,23 +4,42 @@
   position: relative;
 }
 
+$citationblob-width: 360px !default;
+$citationblob-padding: 6px !default;
+$citationblob-border-width: 1px !default;
+$citationblob-border-radius: 3px !default;
+$citationblob-border-style: solid !default;
+$citationblob-border-color: get-color('Souris') !default;
+$citationblob-background-color: get-color('Blanc') !default;
+
+$citationblob-computed-width: $citationblob-width + 2*$citationblob-padding + 2*$citationblob-border-width;
+
 .CitationBlob {
   position: absolute;
-  left: 100%;
-  z-index: 2;
-  width: 406px;
-  padding: 6px;
-  border-radius: 3px;
-  border: 1px solid get-color('Souris');
-  background-color: get-color('Blanc');
+  left: -8px;
+  top: -8px;
+  z-index: 1;
+  width: $citationblob-computed-width;
+  padding: $citationblob-padding;
+  border-radius: $citationblob-border-radius;
+  border-width: $citationblob-border-width;
+  border-style: $citationblob-border-style;
+  border-color: $citationblob-border-color;
+  background-color: $citationblob-background-color;
 
   pre {
     overflow-x: scroll;
     background-color: white;
-    margin: 0 0 12px;
+    border: 1px solid get-color('Vanille');
+    padding: $citationblob-padding;
+    margin: $citationblob-padding 0 0;
   }
 }
 
-.Button + .Button {
-  margin-left: 12px;
+.Toolbar {
+  composes: Toolbar from '../Toolbar.scss';
+}
+
+.ToolbarSpacing {
+  composes: ToolbarSpacing from '../Toolbar.scss';
 }
