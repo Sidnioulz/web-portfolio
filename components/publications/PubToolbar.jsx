@@ -1,7 +1,7 @@
 import css from 'sass/components/publications/PubToolbar.scss';
 import CitationIcon from 'components/publications/CitationIcon';
-import InteractiveIcon from 'components/InteractiveIcon';
-import InteractiveDownloadIcon from 'components/InteractiveDownloadIcon';
+import Button from 'components/Button';
+import DownloadButton from 'components/DownloadButton';
 import PortfolioPropTypes from 'data/portfolio-prop-types';
 
 const PubToolbar = props => (
@@ -9,14 +9,14 @@ const PubToolbar = props => (
     {
         props.publication.istalk
           ? (
-            <InteractiveIcon
+            <Button
               icon="video"
               tooltip="Watch Talk"
               handler={() => window.open(props.publication.mediahref)}
             />
           )
           : (
-            <InteractiveDownloadIcon
+            <DownloadButton
               icon="download"
               tooltip="Download PDF"
               href={props.publication.href}

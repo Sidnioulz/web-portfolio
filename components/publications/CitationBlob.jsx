@@ -1,6 +1,5 @@
 import css from 'sass/components/publications/CitationBlob.scss';
 import Button from 'components/Button';
-import InteractiveIcon from 'components/InteractiveIcon';
 import DownloadButton from 'components/DownloadButton';
 import PropTypes from 'prop-types';
 import PortfolioPropTypes from 'data/portfolio-prop-types';
@@ -10,7 +9,7 @@ import copy from 'services/Clipboard';
 const CitationBlob = props => (
   <div className={css.CitationBlob}>
     <div className={css.Toolbar}>
-      <InteractiveIcon
+      <Button
         scale="small"
         icon="close"
         tooltip="Close"

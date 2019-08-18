@@ -1,5 +1,5 @@
 import React from 'react';
-import InteractiveIcon from 'components/InteractiveIcon';
+import Button from 'components/Button';
 import CitationBlob from 'components/publications/CitationBlob';
 import css from 'sass/components/publications/CitationBlob.scss';
 import PortfolioPropTypes from 'data/portfolio-prop-types';
@@ -22,7 +22,7 @@ class CitationIcon extends React.Component {
   render() {
     return (
       <span className={css.CitationBlobContainer}>
-        <InteractiveIcon
+        <Button
           icon="quote"
           tooltip="Cite"
           handler={this.toggleState}

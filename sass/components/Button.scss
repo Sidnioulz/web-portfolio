@@ -48,18 +48,24 @@ $button-disabled-border-color: rgba(get-color('Pierre'), 0.2) !default;
     &:before {
       color: $button-color;
     }
-
-    &.ButtonIconNoText {
-      flex: 1 0 auto !important;
-    }
   }
-
-
 
   .ButtonInner {
     flex: 1 0 auto;
     color: $button-color;
     @include typography-body-lead($button-color);
+  }
+
+
+  &.ButtonNoText {
+    width: 24px;
+    height: 24px;
+    border-width: 0;
+    padding: 0;
+
+    .ButtonIcon {
+      flex: 1 0 auto !important;
+    }
   }
 
   &.ButtonSmall {
