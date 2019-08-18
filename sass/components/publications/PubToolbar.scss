@@ -1,0 +1,11 @@
+.PubToolbar {
+  > * {
+    display: block;
+    height: 24px;
+    width: 24px;
+  }
+
+  > :not(:first-child) {
+    margin-top: 8px;
+  }
+}

@@ -1,10 +1,11 @@
+import css from 'sass/components/publications/PubToolbar.scss';
 import CitationIcon from 'components/publications/CitationIcon';
 import InteractiveIcon from 'components/InteractiveIcon';
 import InteractiveDownloadIcon from 'components/InteractiveDownloadIcon';
 import PortfolioPropTypes from 'data/portfolio-prop-types';
 
 const PubToolbar = props => (
-  <>
+  <div className={css.PubToolbar}>
     {
         props.publication.istalk
           ? (
@@ -23,7 +24,7 @@ const PubToolbar = props => (
           )
       }
     <CitationIcon publication={props.publication} />
-  </>
+  </div>
 );
 
 PubToolbar.propTypes = {

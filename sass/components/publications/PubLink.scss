@@ -47,16 +47,6 @@
     grid-column-end: span 1;
     grid-row-start: 1;
     grid-row-end: span 2;
-
-    > button {
-      display: block;
-      height: 24px;
-      width: 24px;
-    }
-
-    > * + * {
-      margin-top: 8px;
-    }
   }
 }
 
