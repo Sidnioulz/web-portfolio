@@ -9,7 +9,12 @@ const Button = props => (
     onClick={props.handler}
     className={`${props.className} ${css.Button}${props.scale === 'small' ? ` ${css.ButtonSmall}` : ''}`}
   >
-    {props.icon ? <Icon className={css.ButtonIcon} name={props.icon} /> : ''}
+    {props.icon ? (
+      <Icon
+        className={`${css.ButtonIcon}${!props.children ? ` ${css.ButtonIconNoText}` : ''}`}
+        name={props.icon}
+      />
+    ) : ''}
     {props.children ? <span className={css.ButtonInner}>{props.children}</span> : ''}
     {props.tooltip ? <span className={css.Tooltip}>{props.tooltip}</span> : ''}
   </button>

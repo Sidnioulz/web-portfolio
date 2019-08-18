@@ -3,7 +3,9 @@
 
 .InteractiveIcon {
   composes: Button from "./Button.scss";
-  
+
+  width: 24px;
+  height: 24px;
   border-width: 0;
   padding: 0;
 }
