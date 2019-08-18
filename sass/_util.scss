@@ -39,6 +39,8 @@
     background-image: url('/static/images/hyperlink-sprite.png');
     background-repeat: repeat-x;
     background-position: 0 -185px; // up to 23 text height - 200 sprite height
+  } @else {
+    background-image: none;
   }
 
   @if $height != null {

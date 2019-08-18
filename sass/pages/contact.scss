@@ -1,0 +1,38 @@
+@import "sass/base";
+
+h1 + .columns {
+  margin-top: 24px;
+}
+
+.columns {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  max-width: 630px;
+
+  > * {
+    flex: 0 0 auto;
+  }
+}
+
+form {
+  width: 328px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  margin-right: 120px; // Desktop only, TODO
+}
+
+aside {
+  width: 175px; // Desktop only, TODO
+  min-width: 172px; // All sizes
+}
+
+p a.phoneNumber {
+  @include typography-body-lead();
+}
+
+.getInTouch {
+  color: get-color('Saphir');
+  margin-top: 40px;
+}

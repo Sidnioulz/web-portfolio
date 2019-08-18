@@ -15,7 +15,7 @@ const Button = props => (
   >
     {props.icon ? (<Icon className={css.ButtonIcon} name={props.icon} />) : ''}
     {props.children ? <span className={css.ButtonInner}>{props.children}</span> : ''}
-    {props.tooltip ? <span className={css.Tooltip}>{props.tooltip}</span> : ''}
+    {props.tooltip ? <div className={css.Tooltip}>{props.tooltip}</div> : ''}
   </button>
 );
 

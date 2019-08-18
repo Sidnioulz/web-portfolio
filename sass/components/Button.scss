@@ -21,6 +21,7 @@ $button-disabled-border-color: rgba(get-color('Pierre'), 0.2) !default;
 
 .Tooltip {
   composes: Tooltip from './Tooltip.scss';
+  min-width: 100%; // Proper solution would be a tooltip len prop.
 }
 
 .Button {

@@ -1,83 +1,45 @@
 import Button from 'components/Button';
 import PortfolioHead from 'components/PortfolioHead';
-import TextField, { HelperText, Input } from '@material/react-text-field';
-import css from 'sass/components/react-text-field.scss';
+import MDTextField from 'components/material/TextField';
+import { Toolbar, ToolbarSpacing } from 'components/Toolbar';
+import css from 'sass/pages/contact.scss';
 
 const Contact = () => (
   <>
     <PortfolioHead title="Get in Touch">
       <meta name="robots" content="noindex" />
     </PortfolioHead>
-    <p>
-      {'Contact me '}
-      <a href="mailto:sdodierlazaro@gmail.com">by email</a>
-      {' or '}
-      <a href="tel:+31123456789">by phone at +33 6 24 19 63</a>
-      {'.'}
-    </p>
 
+    <h1>Contact Me</h1>
+    <div className={css.columns}>
+      <form>
+        <MDTextField label="Name" autofocus />
+        <MDTextField label="Company name" required={false} />
+        <MDTextField label="Email address" type="email" />
+        <MDTextField label="Message" textarea />
 
-    <div className={css.TextField}>
-      <TextField
-        label="Name"
-        outlined
-      >
-        <Input
-          required
-          onChange={e => console.log({ value: e.currentTarget.value })}
-        />
-      </TextField>
+        <Toolbar>
+          <ToolbarSpacing />
+          <Button
+            icon="send"
+            type="submit"
+            disabled
+            onClick={() => console.log('clicked!')}
+            tooltip="Please wait just a little more, my mail server isn't up yet!"
+          >
+              Send Message
+          </Button>
+        </Toolbar>
+      </form>
+      <aside>
+        <h2>Phone</h2>
+        <p><a className={css.phoneNumber} href="tel:+31123456789">+33 6 24 19 30 63</a></p>
+        <h3 className={css.getInTouch}>Get in touch to...</h3>
+        <p>Talk about research on UX, HCI, AI or security</p>
+        <p>Ask if I’m available for hire or for consulting</p>
+        <p>Let me know about a new meetup in Paris</p>
+      </aside>
     </div>
-
-    <div className={css.TextField}>
-      <TextField
-        label="Company name"
-        outlined
-        helperText={<HelperText>Optional</HelperText>}
-      >
-        <Input
-          onChange={e => console.log({ value: e.currentTarget.value })}
-        />
-      </TextField>
-    </div>
-
-
-    <div className={css.TextField}>
-      <TextField
-        label="Email address"
-        outlined
-      >
-        <Input
-          type="email"
-          required
-          onChange={e => console.log({ value: e.currentTarget.value })}
-        />
-      </TextField>
-    </div>
-
-
-    <div className={css.TextField}>
-      <TextField
-        label="Message"
-        outlined
-        textarea
-      >
-        <Input
-          required
-          onChange={e => console.log({ value: e.currentTarget.value })}
-        />
-      </TextField>
-    </div>
-
-
-    <Button
-      icon="send"
-      type="submit"
-      disabled="false"
-      onClick={() => console.log('clicked!')}
-    >
-      Send Message
-    </Button>
 
 
   </>

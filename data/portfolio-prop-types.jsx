@@ -18,9 +18,17 @@ const publication = PropTypes.exact({
   mediahref: PropTypes.string,
 });
 
+// https://www.w3schools.com/tags/att_input_type.asp
+const inputType = PropTypes.oneOf([
+  'button', 'checkbox', 'color', 'date', 'datetime-local', 'email', 'file', 'hidden',
+  'image', 'month', 'number', 'password', 'radio', 'range', 'reset', 'search', 'submit',
+  'tel', 'text', 'time', 'url', 'week',
+]);
+
 const PortfolioPropTypes = {
   publications: PropTypes.arrayOf(publication),
   publication,
+  inputType,
 };
 
 export default PortfolioPropTypes;
