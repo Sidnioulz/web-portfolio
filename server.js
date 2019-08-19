@@ -11,13 +11,14 @@ const helmet = require('helmet');
 // Read env and initialise Next.
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
-const app = next({ dev });
-const handle = app.getRequestHandler();
+const nextApp = next({ dev });
+const nextHandle = nextApp.getRequestHandler();
 
-app.prepare().then(() => {
+nextApp.prepare().then(() => {
   // Initialise the Express server serving Next's files and other static folders.
   const expressApp = express();
 
+  // Serve the ACME challenge folder for certificate renewals.
   expressApp.use(
     express.static(`${__dirname}/acme-challenge`, {
       maxage: dev ? '0' : '365d',
@@ -25,14 +26,13 @@ app.prepare().then(() => {
   );
 
   // In production, add Helmet headers and redirect to HTTPS. In dev, serve in HTTP.
-  expressApp.get('*', (req, res) => handle(req, res));
-  if (!dev) {
+  if (dev) {
+    expressApp.get('*', (req, res) => nextHandle(req, res));
+  } else {
     expressApp.use(helmet());
-    expressApp.all('*', (req, res, nextHandler) => (
-      (req.secure)
-        ? nextHandler()
-        : res.redirect(301, `https://${req.hostname}${req.url}`)
-    ));
+    expressApp.get('*', (req, res) => ((req.secure)
+      ? nextHandle(req, res)
+      : res.redirect(301, `https://${req.hostname}${req.url}`)));
   }
 
   // Start the HTTP server available in all environments.
