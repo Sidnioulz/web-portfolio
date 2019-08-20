@@ -5,7 +5,7 @@ import DownloadButton from 'components/DownloadButton';
 import PortfolioPropTypes from 'data/portfolio-prop-types';
 
 const PubToolbar = props => (
-  <div className={css.PubToolbar}>
+  <div className={`${css.PubToolbar}${props.className ? ` ${props.className}` : ''}`}>
     {
         props.publication.istalk
           ? (
