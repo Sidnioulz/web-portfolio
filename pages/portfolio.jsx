@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import PortfolioHead from 'components/PortfolioHead';
 
 const Portfolio = () => (
@@ -11,6 +12,19 @@ const Portfolio = () => (
       {' or '}
       <a href="/static/files/Dodier-Lazaro_Portfolio_SCREEN.pdf">screen quality</a>
     </p>
+
+    <ul>
+      <li key="supply-chain-app-redesign">
+        <Link href="/project/supply-chain-app-redesign">
+          <a>App Redesign &ndash; Supply Chain Data Collection App</a>
+        </Link>
+      </li>
+      <li key="cosmetic-for-importers">
+        <Link href="/project/cosmetic-for-importers">
+          <a>Supporting Cosmetics Importers in a Regulatory App for Toxicologists</a>
+        </Link>
+      </li>
+    </ul>
   </>
 );
 
