@@ -24,6 +24,12 @@ h3 {
   margin: 0 0 12px;
 }
 
+h4 {
+  @include typography-body-lead();
+  color: get-color('Serpentine brute');
+  margin: 0 0 12px;
+}
+
 p + h3 {
   margin-top: 70px;
 }

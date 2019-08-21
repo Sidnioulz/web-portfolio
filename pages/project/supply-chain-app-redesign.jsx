@@ -8,6 +8,7 @@ const Page = () => (
     <PortfolioHead title="Supply Chain App Redesign" />
     <section>
       <h1>App Redesign</h1>
+      {/* <h1>Product Strategy Overhaul</h1> */}
       <h2>Supply Chain Data Collection App</h2>
 
       <h3>Project Context</h3>
@@ -123,13 +124,120 @@ const Page = () => (
 
 
     <section>
-      <h1>X</h1>
+      <h1>Agreeing on a Strategy</h1>
+      <p>
+        {'The ideas we gathered so far were combined with those of the project staff, CEO and CTO through further interviews. I then '}
+        <em>
+          {'consolidated the nearly 200 identified ideas into groups based on what value they provided'}
+        </em>
+        {' (which problem is fixed, whose experience is improved, what opportunity for revenue is created). Ideas critical to a specific supplier segment were also highlighted.'}
+      </p>
+      <BlockQuote decoration="quote" float="left">200 ideas were consolidated into four strategic initiatives.</BlockQuote>
+      <p>
+        <em>Four topics emerged:</em>
+        {' critical pain points; reply rate optimisations; added value to suppliers; and added transparency for clients. They were adopted as strategic axes for the service, and have become the foundation of its development roadmap.'}
+      </p>
+      <p>
+        {'When this app redesign started, EcoMundo had no product maintenance process or long-term roadmap. I imported the generated insights, ideas, segments and initiatives into a PM tool to help stakeholders trace back how decisions had been made and to help them adjust their plans accordingly as circumstances infirmed some of the insights we\'d formulated.'}
+      </p>
+      <p>
+        {'This PM tool is now being adopted across EcoMundo to maintain all of its digital products.'}
+      </p>
+
     </section>
+
+
     <section>
-      <h1>X</h1>
+      <h1>Initiatives</h1>
+      <h2>For Suppliers</h2>
+      <h3>1. Fix Critical Pain Points</h3>
+      <p>
+        {'This initiative focuses on removing major issues likely to cause disengagement from the app.'}
+      </p>
+      <ul>
+        <li>
+          {'Improve usability: simplify submission funnel and limit repetitive input with better interaction patterns'}
+        </li>
+        <li>
+          {'Help suppliers report unrecognised references to clients so those references can be fixed in time'}
+        </li>
+        <li>
+          {'Let suppliers invite colleagues to use the app, to limit risks of dropping out or submitting out-of-channel '}
+        </li>
+        <li>
+          {'Let suppliers know what information is needed for each regulation, and why, so they know what to do'}
+        </li>
+      </ul>
+      <h3>2. Optimise Reply Rate</h3>
+      <p>
+        {'Optimise out-of-channel interactions, and solve the most salient pain points of each supplier segment.'}
+      </p>
+      <ul>
+        <li>
+          {'Localise the app, emails and support to Chinese, as many suppliers are from China'}
+        </li>
+        <li>
+          {'Provide APIs to synchronise with large suppliers\' regulatory databases, and add data import features'}
+        </li>
+        <li>
+          {'Add an in-app chat to support sales departments with little regulatory knowledge'}
+        </li>
+        <li>
+          {'Decrease the time and cost of contacting a supplier manually, with better contact management'}
+        </li>
+      </ul>
+
+      <h3>3. Provide Value to Suppliers</h3>
+      <p>
+        {'EcoMundo has a few competitive advantages, that can provide incentives for suppliers to stay on the app.'}
+      </p>
+      <ul>
+        <li>
+          {'offer regulatory updates, and alert suppliers when their references are made non-compliant by a new law'}
+        </li>
+        <li>
+          {'Generate certificates of compliance and automatically translate them in dozens of languages'}
+        </li>
+        <li>
+          {'Provide tools to share certificates with other clients'}
+        </li>
+        <li>
+          {'Warn when certificates are about to expire'}
+        </li>
+        <li>
+          {'Add reporting features to help executives monitor compliance in large organisations'}
+        </li>
+      </ul>
+
+      <h2>For Clients</h2>
+      <h3>4. Make the Service more Transparent</h3>
+      <p>
+        {'Clients don\'t always believe EcoMundo is doing the best to provide the service they pay for, and they need to be regularly explained why delays occur.'}
+      </p>
+      <ul>
+        <li>
+          {'Show clients all the contact attempts made by EcoMundo, to prove work is being done'}
+        </li>
+        <li>
+          {'Report more precisely, in statistics and dashboards, the reasons why suppliers are encountering delays'}
+        </li>
+        <li>
+          {'When a supplier\'s name or contact details change, propagate changes to clients so they\'re up-to-date'}
+        </li>
+        <li>
+          {'Help clients provide correct names for references they request, so suppliers won\'t get stuck'}
+        </li>
+      </ul>
     </section>
+
     <section>
-      <h1>X</h1>
+      <h4>Sorry, this is unfinished.</h4>
+      <p>
+        {'Find the full version in '}
+        <a href="/static/files/Dodier-Lazaro_Portfolio_PRINT.pdf">print quality</a>
+        {' or '}
+        <a href="/static/files/Dodier-Lazaro_Portfolio_SCREEN.pdf">screen quality</a>
+      </p>
     </section>
 
   </div>
