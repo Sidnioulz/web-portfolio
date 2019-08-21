@@ -20,6 +20,10 @@ h1 + .columns {
   @include typography-body-lead();
   color: get-color('Grenade');
   margin-bottom: 1em;
+
+  a {
+    @include link-decorator();
+  }
 }
 
 form {

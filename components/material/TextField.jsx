@@ -32,6 +32,7 @@ class MDTextField extends React.Component {
         >
           <Input
             name={this.props.name}
+            disabled={this.props.disabled}
             required={this.props.required ? 'required' : false}
             ref={(input) => { this.input = input; }}
             type={this.props.type}
@@ -51,6 +52,7 @@ MDTextField.propTypes = {
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
+  disabled: PropTypes.bool,
   required: PropTypes.bool,
   reset: PropTypes.bool,
   textarea: PropTypes.bool,
@@ -62,6 +64,7 @@ MDTextField.defaultProps = {
   autofocus: false,
   helperText: null,
   onChange: null,
+  disabled: false,
   required: true,
   reset: false,
   textarea: false,

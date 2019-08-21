@@ -14,13 +14,17 @@ const Contact = () => (
     <div className={css.columns}>
       <div>
         <div className={css.MailError}>
-    Sorry, my mail server is down right now. Please find me on LinkedIn instead.
+    Sorry, my mail server is down right now. Please find me on
+          {' '}
+          <a href="https://www.linkedin.com/in/stevedodierlazaro/">LinkedIn</a>
+          {' '}
+instead.
         </div>
         <Form submit={(<Button icon="send">Send Message</Button>)}>
-          <MDTextField name="person" label="Name" autofocus />
-          <MDTextField name="company" label="Company name" required={false} />
-          <MDTextField name="email" label="Email address" type="email" />
-          <MDTextField name="message" label="Message" textarea />
+          <MDTextField disabled name="person" label="Name" autofocus />
+          <MDTextField disabled name="company" label="Company name" required={false} />
+          <MDTextField disabled name="email" label="Email address" type="email" />
+          <MDTextField disabled name="message" label="Message" textarea />
         </Form>
       </div>
       <aside>
