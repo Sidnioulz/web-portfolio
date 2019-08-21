@@ -212,10 +212,36 @@ Toxicologists needed a dashboard listing all watched products and a screen that 
       </ul>
     </section>
 
-
     <section>
-      <h1>X</h1>
+      <h1>The Outsourcing UI</h1>
+      <h2>Product Portfolio</h2>
+      <div className={css.FullscreenBox}>
+        <img src="/static/images/project/cosmetics/outsourcing-portfolio.png" className={css.FullscreenBoxLeftPadded} alt="TODO" />
+        <hr />
+        <img src="/static/images/project/cosmetics/outsourcing-portfolio-ready.png" className={css.FullscreenBoxLeftPadded} alt="TODO" />
+      </div>
+
+      <h2>Product Editor &ndash; Definition & Composition</h2>
+      <div className={css.FullscreenBox}>
+        <img src="/static/images/project/cosmetics/outsourcing-edit1.png" className={css.FullscreenBoxLeftPadded} alt="TODO" />
+        <hr />
+        <img src="/static/images/project/cosmetics/outsourcing-edit2.png" className={css.FullscreenBoxLeftPadded} alt="TODO" />
+      </div>
+
+      <h2>Product Editor &ndash; Ingredient Origins</h2>
+      <div className={css.FullscreenBox}>
+        <img src="/static/images/project/cosmetics/outsourcing-edit3.png" className={css.FullscreenBoxLeftPadded} alt="TODO" />
+      </div>
+
+      <h2>Product Editor &ndash; Documents</h2>
+      <div className={css.FullscreenBox}>
+        <img src="/static/images/project/cosmetics/outsourcing-edit6.png" className={css.FullscreenBoxLeftPadded} alt="TODO" />
+        <hr />
+        <img src="/static/images/project/cosmetics/outsourcing-edit-help.png" className={css.FullscreenBoxLeftPadded} alt="TODO" />
+      </div>
+
     </section>
+
 
   </div>
 );
