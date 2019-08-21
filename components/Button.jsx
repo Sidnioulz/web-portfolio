@@ -22,17 +22,18 @@ const Button = props => (
 Button.propTypes = {
   disabled: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   icon: PropTypes.string,
-  tooltip: PropTypes.string,
-  handler: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
+  handler: PropTypes.func,
   scale: PropTypes.oneOf(['small', 'medium']),
+  tooltip: PropTypes.string,
   type: PropTypes.oneOf(['button', 'reset', 'submit']),
 };
 
 Button.defaultProps = {
   disabled: null,
   icon: null,
-  tooltip: null,
+  handler: () => true,
   scale: 'medium',
+  tooltip: null,
   type: 'button',
 };
 
