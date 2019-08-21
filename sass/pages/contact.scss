@@ -15,6 +15,13 @@ h1 + .columns {
   }
 }
 
+.MailError {
+  width: 328px;
+  @include typography-body-lead();
+  color: get-color('Grenade');
+  margin-bottom: 1em;
+}
+
 form {
   width: 328px;
   display: flex;
