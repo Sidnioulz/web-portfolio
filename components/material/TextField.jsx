@@ -5,19 +5,17 @@ import TextField, { HelperText, Input } from '@material/react-text-field';
 import css from 'sass/components/md-text-field.scss';
 
 class MDTextField extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: props.value || '',
-    };
-  }
-
   componentDidMount() {
     if (this.props.autofocus) {
-      const { inputElement } = this.input;
-      if (inputElement) {
-        inputElement.focus();
-      }
+      /* Sadly, the MDC textfield isn't fully initialised after mounting.
+        * We need to give it a few milliseconds or it won't properly handle
+        * the focus event when we focus. */
+      setTimeout(() => {
+        const { inputElement } = this.input;
+        if (inputElement) {
+          inputElement.focus();
+        }
+      }, 10);
     }
   }
 
@@ -25,7 +23,7 @@ class MDTextField extends React.Component {
     return (
       <div className={css.TextField}>
         <TextField
-          label={this.props.label}
+          label={`${this.props.label}  `}
           helperText={typeof this.props.helperText === 'string'
             ? <HelperText>this.props.helperText</HelperText>
             : this.props.helperText}
@@ -33,15 +31,12 @@ class MDTextField extends React.Component {
           textarea={this.props.textarea}
         >
           <Input
+            name={this.props.name}
             required={this.props.required ? 'required' : false}
             ref={(input) => { this.input = input; }}
             type={this.props.type}
-            autofocus={this.props.autofocus}
-            value={this.state.value}
-            onChange={(e) => {
-              const { value } = e.currentTarget; // e is pooled and can't be used async.
-              this.setState(() => ({ value }));
-            }}
+            value={this.props.value}
+            onChange={this.props.onChange}
           />
         </TextField>
       </div>
@@ -53,6 +48,8 @@ MDTextField.propTypes = {
   autofocus: PropTypes.bool,
   helperText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
   required: PropTypes.bool,
   textarea: PropTypes.bool,
   type: PortfolioPropTypes.inputType,
@@ -62,6 +59,7 @@ MDTextField.propTypes = {
 MDTextField.defaultProps = {
   autofocus: false,
   helperText: null,
+  onChange: null,
   required: true,
   textarea: false,
   type: 'text',

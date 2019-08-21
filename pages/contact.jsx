@@ -1,7 +1,7 @@
 import Button from 'components/Button';
 import PortfolioHead from 'components/PortfolioHead';
 import MDTextField from 'components/material/TextField';
-import { Toolbar, ToolbarSpacing } from 'components/Toolbar';
+import Form from 'components/Form';
 import css from 'sass/pages/contact.scss';
 
 const Contact = () => (
@@ -12,25 +12,12 @@ const Contact = () => (
 
     <h1>Contact Me</h1>
     <div className={css.columns}>
-      <form>
-        <MDTextField label="Name" autofocus />
-        <MDTextField label="Company name" required={false} />
-        <MDTextField label="Email address" type="email" />
-        <MDTextField label="Message" textarea />
-
-        <Toolbar>
-          <ToolbarSpacing />
-          <Button
-            icon="send"
-            type="submit"
-            disabled
-            onClick={() => console.log('clicked!')}
-            tooltip="Please wait just a little more, my mail server isn't up yet!"
-          >
-              Send Message
-          </Button>
-        </Toolbar>
-      </form>
+      <Form submit={(<Button icon="send">Send Message</Button>)}>
+        <MDTextField name="person" label="Name" autofocus />
+        <MDTextField name="company" label="Company name" required={false} />
+        <MDTextField name="email" label="Email address" type="email" />
+        <MDTextField name="message" label="Message" textarea />
+      </Form>
       <aside>
         <h2>Phone</h2>
         <p><a className={css.phoneNumber} href="tel:+31123456789">+33 6 24 19 30 63</a></p>
