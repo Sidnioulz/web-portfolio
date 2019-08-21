@@ -118,7 +118,7 @@ const Page = () => (
     <section>
       <h1>Supplier Journey</h1>
       <div className={css.FullscreenBox}>
-        <img src="/static/images/project/supply-chain-app-redesign/journey.png" className={css.FullscreenBoxLeftPadded} alt="When contacted, only 10% of suppliers will typically submit the requested data in the app. 25% will ignore EcoMundo. 25% will ask for a delay till they find the information. 15% will state they don't recognise the requested references. 10% will ignore the app and point to a site with certificates. 15% will email the data directly instead." />
+        <img src="/static/images/project/supply-chain-app-redesign/journey.png" className={css.FullscreenBoxLeftPadded} alt="When suppliers are contacted, the request sent by EcoMundo may be stopped in its track by a variety of UX issues encountered by suppliers, even before they log in into the app. When they get to this stage, authentication and data input are too tedious, providing more opportunities to give up." />
       </div>
     </section>
 
@@ -231,7 +231,7 @@ const Page = () => (
     </section>
 
     <section>
-      <h4>Sorry, this is unfinished.</h4>
+      <h3>Sorry, this is unfinished.</h3>
       <p>
         {'Find the full version in '}
         <a href="/static/files/Dodier-Lazaro_Portfolio_PRINT.pdf">print quality</a>
