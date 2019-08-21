@@ -25,7 +25,7 @@ const Page = props => (
 );
 
 Page.propTypes = {
-  lastCommit: PropTypes.instanceOf(Date).isRequired,
+  lastCommit: PropTypes.string.isRequired,
 };
 
 Page.getInitialProps = async function () {
