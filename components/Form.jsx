@@ -7,7 +7,9 @@ import { Toolbar, ToolbarSpacing } from 'components/Toolbar';
 class Form extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      reset: false,
+    };
     props.children.filter(child => child.name).forEach((child) => {
       this.state[`field-${child.name}`] = child.value || null;
     });
@@ -29,17 +31,13 @@ class Form extends React.Component {
   }
 
   resetForm() {
+    this.DOMform.reset();
     this.setState((state) => {
-      const resetState = {};
+      const resetState = { reset: true };
       const fieldValues = Object.keys(state).filter(key => key.startsWith('field-'));
       fieldValues.forEach((value) => { resetState[value] = ''; });
       return resetState;
-    }, () => {
-      this.DOMform.reset();
-      this.forceUpdate();
-    });
-    // this.DOMform.reset();
-    // this.forceUpdate();
+    }, () => this.setState(() => ({ reset: false })));
   }
 
   render() {
@@ -48,6 +46,7 @@ class Form extends React.Component {
       child => React.cloneElement(child, {
         value: this.state[`field-${child.props.name}`],
         onChange: this.updateValue,
+        reset: this.state.reset,
       }),
     );
 

@@ -35,7 +35,8 @@ class MDTextField extends React.Component {
             required={this.props.required ? 'required' : false}
             ref={(input) => { this.input = input; }}
             type={this.props.type}
-            value={this.props.value}
+            isValid={this.props.reset ? true : undefined}
+            value={this.props.reset ? '' : this.props.value}
             onChange={this.props.onChange}
           />
         </TextField>
@@ -51,6 +52,7 @@ MDTextField.propTypes = {
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   required: PropTypes.bool,
+  reset: PropTypes.bool,
   textarea: PropTypes.bool,
   type: PortfolioPropTypes.inputType,
   value: PropTypes.string,
@@ -61,6 +63,7 @@ MDTextField.defaultProps = {
   helperText: null,
   onChange: null,
   required: true,
+  reset: false,
   textarea: false,
   type: 'text',
   value: '',
