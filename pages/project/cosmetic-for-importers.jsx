@@ -70,10 +70,10 @@ const Page = () => (
       <h1>FormulaCheck &ndash; A Painful Start</h1>
 
       <h2>Initial UI Constraints</h2>
-      <p>The design for this new feature started in an unfavourable context, with many constraints.</p>
+      <p>This feature started in an unfavourable context, with the following constraints.</p>
 
       <h4>No Governance</h4>
-      <p>Cosmetic Factory, the app to receive the feature, had no product manager and so, stakeholders would fight bitterly to retain control of the design process. As a new hire, I was asked to mock and code UIs based on an initial idea of interaction flow and front-end technical constraints, with little creative freedom.</p>
+      <p>Cosmetic Factory, the app to receive the feature, had no product manager and so, stakeholders would fight bitterly to retain control of the design process's outcome. As a new hire, I was asked to mock UIs based on an initial idea of interaction flow and front-end technical constraints, with little creative freedom.</p>
 
       <h4>Technical Debt</h4>
       <p>
@@ -85,7 +85,7 @@ Toxicologists needed a dashboard listing all watched products and a screen that 
 
       <h2>Potential for Improvements</h2>
       <p>
-      After the initial iteration, I took upon myself to re-analyse the UI specifically with foreign importers in mind, and noticed a handful of issues which I'll discuss here along with improvement proposals.
+      After the initial iteration, I took upon myself to re-analyse the UI specifically with foreign importers in mind, and noticed a handful of issues. I'll present them below with the second iteration of the UIs.
       </p>
     </section>
 
@@ -137,24 +137,27 @@ Toxicologists needed a dashboard listing all watched products and a screen that 
 
       <h2>Results Screens</h2>
 
-      <h3>UI Issues</h3>
+      <h3>Issues on the Product Results UI</h3>
       <ul>
         <li><em>The use of a grid is deeply inappropriate here: data density is too low, and horizontal space too small to display every column, causing users to miss out on results</em></li>
         <li>The grid layout only works well with the EU regulation; USA results are illegible and occasionally wrong because of the grid's rigid data model</li>
-        <li>The details popup didn't have a scrollbar, making it impossible to interact with it if it's too long or the screen too small</li>
+        <li>The column headers use local jargon: annex numbers of the EU's main cosmetics regulation. It's unclear to foreigners what those numbers are</li>
       </ul>
 
-      <h3>Product / UX Issues</h3>
+      <h3>Second Revision</h3>
+      <div className={css.FullscreenBox}>
+        <img src="/static/images/project/cosmetics/corrected/formulacheck-results1.png" className={css.FullscreenBoxLeftPadded} alt="TODO" />
+      </div>
+
+      <h3>Issues on the Details Popup</h3>
       <ul>
-        <li>The column headers use local jargon: annex numbers of the EU's main cosmetics regulation. It's unclear to foreigners what those numbers are</li>
+        <li>The details popup didn't have a scrollbar, making it impossible to interact with it if it's too long or the screen too small</li>
         <li>At the top of the details popup is a tab bar, usually with a single tab in real-world conditions. It's a debugging feature for toxicologists that was forced through to production</li>
         <li>Users aren't told when missing information on their product prevents the algorithm from working; instead, they're told the product is non-compliant</li>
       </ul>
 
       <h3>Second Revision</h3>
       <div className={css.FullscreenBox}>
-        <img src="/static/images/project/cosmetics/corrected/formulacheck-results1.png" className={css.FullscreenBoxLeftPadded} alt="TODO" />
-        <hr />
         <img src="/static/images/project/cosmetics/corrected/formulacheck-results2.png" className={css.FullscreenBoxLeftPadded} alt="TODO" />
       </div>
 
@@ -201,7 +204,7 @@ Toxicologists needed a dashboard listing all watched products and a screen that 
       </p>
       <p>
         {'In contrast, foreign brands who seek to import in the EU buy pre-made formulas from B2B formulators, package them and\
-        sell the packaged products. Because their process differs radically, the interaction flow of Cosmetic Factory must be re-imagined.'}
+        sell the packaged products. Because their process differs, the interaction flow of Cosmetic Factory must be adjusted.'}
       </p>
       <h3>Goals</h3>
       <p>We now want a unified interface that:</p>
