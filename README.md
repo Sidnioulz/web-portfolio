@@ -46,7 +46,7 @@ I have a [systemd](https://www.freedesktop.org/wiki/Software/systemd/) service s
 
 I have set the server to listen to the ports identified by environment variables `PORT` and `SECUREPORT` for HTTP and HTTPS connections. Default values are 3000 and 3443 if not set. I define those in my server's Systemd service file and use IPTABLES to redirect the actual OS's ports to allow for web-portfolio to be run as an unprivileged user. I recommend you do the same.
 
-To receive mails, please set environment variables `MAIL_DAEMON_NAME` and `MAIL_RECIPIENT` to be contact names (e.g. John Doe <jdoe@foo.net>) and `DOMAIN` to be your domain name.
+To receive mails, please set environment variables `MAIL_DAEMON_NAME` to be a contact name (e.g. John Doe <jdoe@foo.net>), `MAIL_RECIPIENT` to be a valid email address, and `DOMAIN` to be your domain name.
 
 ### CircleCI Environment
 

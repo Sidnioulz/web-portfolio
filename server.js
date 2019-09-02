@@ -23,7 +23,7 @@ const nextHandle = nextApp.getRequestHandler();
 const transporter = nodemailer.createTransport({
   sendmail: true,
   name: 'sdl.design',
-  path: '/usr/sbin/sendmail',
+  path: process.env.SENDMAIL || '/usr/sbin/sendmail',
 });
 const sendMail = message => new Promise((resolve, reject) => {
   transporter.sendMail(message, (error, info) => {
@@ -38,7 +38,6 @@ const sendMail = message => new Promise((resolve, reject) => {
 nextApp.prepare().then(() => {
   // Initialise the Express server serving Next's files and other static folders and services.
   const expressApp = express();
-  expressApp.use(bodyParser.urlencoded({ extended: true }));
 
   // Serve the ACME challenge folder for certificate renewals.
   expressApp.use(
@@ -48,20 +47,20 @@ nextApp.prepare().then(() => {
   );
 
   // Serve emails over the contact API, used by /pages/contact.
-  expressApp.post('/api/contact', async (req, res, nextHandler) => {
+  expressApp.post('/api/contact', bodyParser.json(), async (req, res, nextHandler) => {
     try {
       const {
-        name, company, email, message,
+        person, company, email, message,
       } = req.body;
       await sendMail({
         from: process.env.MAIL_DAEMON_NAME,
         to: process.env.MAIL_RECIPIENT,
-        subject: '[web-portfolio] Contact Form Message',
-        text: `<h1>Contact Form Message</h1>
+        subject: `[web-portfolio] Message from ${person}`,
+        html: `<h1>Contact Form Message</h1>
               <ul>
                 <li>Sent via ${process.env.DOMAIN}'s contact form</li>
-                <li>From ${name}</li>
-                ${company ? `</li>Working at ${company}</li>` : ''}
+                <li>From ${person}</li>
+                ${company ? `<li>Working at ${company}</li>` : ''}
                 <li>Their email: <code>${email}</code></li>
               </ul>
               <h2>Message</h2>

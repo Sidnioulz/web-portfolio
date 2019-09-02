@@ -28,7 +28,7 @@ class Form extends React.Component {
       data[key.slice('field-'.length)] = this.state[key];
     });
 
-    const success = await this.props.submitHandler(data);
+    const success = await this.props.submitHandler.call(this, data);
     if (success) {
       await asyncState(this)({ submitting: false, submitted: true });
     }
