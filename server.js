@@ -53,7 +53,20 @@ nextApp.prepare().then(() => {
       const {
         name, company, email, message,
       } = req.body;
-      await sendMail({ text: `Name: ${name}<br/>Company: ${company}<br/>Email: ${email}<br/><hr/>${message}` });
+      await sendMail({
+        from: process.env.MAIL_DAEMON_NAME,
+        to: process.env.MAIL_RECIPIENT,
+        subject: '[web-portfolio] Contact Form Message',
+        text: `<h1>Contact Form Message</h1>
+              <ul>
+                <li>Sent via ${process.env.DOMAIN}'s contact form</li>
+                <li>From ${name}</li>
+                ${company ? `</li>Working at ${company}</li>` : ''}
+                <li>Their email: <code>${email}</code></li>
+              </ul>
+              <h2>Message</h2>
+              <p>${message}</p>`,
+      });
 
       res.end('success');
     } catch (error) {
