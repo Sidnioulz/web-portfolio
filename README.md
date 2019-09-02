@@ -44,6 +44,8 @@ CircleCI has a copy of a private RSA key designed specifically to allow logging 
 
 I have a [systemd](https://www.freedesktop.org/wiki/Software/systemd/) service set up to start my Web portfolio using `npm run start`, so I update my app on the server, replace the old build with the one made by CircleCI (less CO2 output than rebuilding!), and restart my service.
 
+I have set the server to listen to the ports identified by environment variables `PORT` and `SECUREPORT` for HTTP and HTTPS connections. Default values are 3000 and 3443 if not set. I define those in my server's SystemD service file and use IPTABLES to redirect the actual OS's ports to allow for web-portfolio to be run as an unprivileged user. I recommend you do the same.
+
 ### CircleCI Environment
 
 You will need to set the variable `SASS_PATH` to `./node_modules:./sass`. You may also need a `FIGMA_TOKEN` variable. Finally, you may need `SSH_HOST` and `SSH_USER` if you don't change the deployment pipeline.

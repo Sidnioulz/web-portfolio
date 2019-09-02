@@ -10,6 +10,7 @@ const helmet = require('helmet');
 
 // Read env and initialise Next.
 const port = parseInt(process.env.PORT, 10) || 3000;
+const securePort = parseInt(process.env.SECUREPORT, 10) || 3443;
 const dev = process.env.NODE_ENV !== 'production';
 const nextApp = next({ dev });
 const nextHandle = nextApp.getRequestHandler();
@@ -54,7 +55,7 @@ nextApp.prepare().then(() => {
     };
 
     const httpsServer = https.createServer(credentials, expressApp);
-    httpsServer.listen(443, (err) => {
+    httpsServer.listen(securePort, (err) => {
       if (err) throw err;
     });
   }
