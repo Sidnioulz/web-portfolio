@@ -13,18 +13,25 @@ const Contact = () => (
     <h1>Contact Me</h1>
     <div className={css.columns}>
       <div>
-        <div className={css.MailError}>
-    Sorry, my mail server is down right now. Please find me on
-          {' '}
-          <a href="https://www.linkedin.com/in/stevedodierlazaro/">LinkedIn</a>
-          {' '}
-instead.
-        </div>
-        <Form submit={(<Button icon="send">Send Message</Button>)}>
-          <MDTextField disabled name="person" label="Name" autofocus />
-          <MDTextField disabled name="company" label="Company name" required={false} />
-          <MDTextField disabled name="email" label="Email address" type="email" />
-          <MDTextField disabled name="message" label="Message" textarea />
+        <Form
+          submit={(<Button icon="send">Send Message</Button>)}
+          submitHandler={async (data) => {
+            const res = await fetch('/api/contact', {
+              method: 'post',
+              headers: {
+                Accept: 'application/json, text/plain, */*',
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(data),
+            });
+
+            return res.status === 200;
+          }}
+        >
+          <MDTextField name="person" label="Name" autofocus />
+          <MDTextField name="company" label="Company name" required={false} />
+          <MDTextField name="email" label="Email address" type="email" />
+          <MDTextField name="message" label="Message" textarea />
         </Form>
       </div>
       <aside>

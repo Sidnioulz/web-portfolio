@@ -28,16 +28,8 @@ class Form extends React.Component {
       data[key.slice('field-'.length)] = this.state[key];
     });
 
-    const res = await fetch('/api/contact', {
-      method: 'post',
-      headers: {
-        Accept: 'application/json, text/plain, */*',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
-
-    if (res.status === 200) {
+    const success = await this.props.submitHandler(data);
+    if (success) {
       await asyncState(this)({ submitting: false, submitted: true });
     }
 
@@ -77,8 +69,6 @@ class Form extends React.Component {
           <ToolbarSpacing />
           {React.cloneElement(this.props.submit, {
             type: 'submit',
-            disabled: true,
-            tooltip: 'Sorry, my mail server is down right now. Please find me on LinkedIn instead.',
           })}
         </Toolbar>
       );
@@ -115,6 +105,7 @@ class Form extends React.Component {
 
 Form.propTypes = {
   submit: PropTypes.element,
+  submitHandler: PropTypes.func.isRequired,
 };
 
 Form.defaultProps = {
