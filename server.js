@@ -58,13 +58,14 @@ nextApp.prepare().then(() => {
         subject: `[web-portfolio] Message from ${person}`,
         html: `<h1>Contact Form Message</h1>
               <ul>
-                <li>Sent via ${process.env.DOMAIN}'s contact form</li>
                 <li>From ${person}</li>
                 ${company ? `<li>Working at ${company}</li>` : ''}
-                <li>Their email: <code>${email}</code></li>
+                <li>Their email: <a href="mailto:${email}"><code>${email}</code></a></li>
               </ul>
               <h2>Message</h2>
-              <p>${message}</p>`,
+              <p>${message}</p>
+              <hr />
+              <h6>Sent via ${process.env.DOMAIN}'s contact form</h6>`,
       });
 
       res.end('success');
