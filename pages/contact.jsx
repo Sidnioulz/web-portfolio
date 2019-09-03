@@ -3,6 +3,7 @@ import PortfolioHead from 'components/PortfolioHead';
 import MDTextField from 'components/material/TextField';
 import Form from 'components/Form';
 import css from 'sass/pages/contact.scss';
+import bruteForceTimeout from 'services/Security';
 
 const Contact = () => (
   <>
@@ -16,14 +17,14 @@ const Contact = () => (
         <Form
           submit={(<Button icon="send">Send Message</Button>)}
           submitHandler={async (data) => {
-            const res = await fetch('/api/contact', {
+            const res = await bruteForceTimeout(fetch('/api/contact', {
               method: 'post',
               headers: {
                 Accept: 'application/json, text/plain, */*',
                 'Content-Type': 'application/json',
               },
               body: JSON.stringify(data),
-            });
+            }), 2000);
 
             return res.status === 200;
           }}
