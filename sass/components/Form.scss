@@ -1,0 +1,24 @@
+@import 'sass/base';
+
+.Label {
+  @include typography-body-lead();
+  border-width: 5px 0 0;
+  border-style: dotted;
+  padding-top: 6px;
+}
+
+.SubmittedLabel {
+  composes: Label;
+  color: get-color('Serpentine brute');
+  border-color: get-color('Pistache');
+}
+
+.ErrorLabel {
+  composes: Label;
+  color: get-color('Grenade');
+  border-color: get-color('Poudre');
+
+  a {
+    @include link-decorator();
+  }
+}

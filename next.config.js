@@ -18,6 +18,10 @@ module.exports = withSass({
   env: {
     FIGMA_TOKEN: process.env.FIGMA_TOKEN,
   },
+  publicRuntimeConfig: {
+    contactFormFallbackEmail: process.env.MAIL_RECIPIENT_HUMAN_READABLE
+      || process.env.MAIL_RECIPIENT,
+  },
   webpack: (config) => {
     config.resolve.modules.push(rootFolder);
     return config;
