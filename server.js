@@ -56,6 +56,10 @@ nextApp.prepare().then(() => {
         from: process.env.MAIL_DAEMON_NAME,
         to: process.env.MAIL_RECIPIENT,
         subject: `[web-portfolio] Message from ${person}`,
+        text: `Contact Form Message\n\nFrom ${person}\n${company ? `Working at ${company}\n` : ''}`
+          + `Their email: ${email}\n\n-----------------------\n\n${message}\n\n-----------------------\n\n`
+          + `Received on ${new Date().toLocaleString('en-GB', { timeZone: process.env.TIMEZONE })}\n`
+          + `Sent via ${process.env.DOMAIN}'s contact form.\n`,
         html: `<h1>Contact Form Message</h1>
               <ul>
                 <li>From ${person}</li>
@@ -65,7 +69,11 @@ nextApp.prepare().then(() => {
               <h2>Message</h2>
               <p>${message}</p>
               <hr />
-              <h6>Sent via ${process.env.DOMAIN}'s contact form</h6>`,
+              <h5>
+                Received on ${new Date().toLocaleString('en-GB', { timeZone: process.env.TIMEZONE })}
+                <br />
+                Sent via ${process.env.DOMAIN}'s contact form.
+              </h5>`,
       });
 
       res.end('success');
