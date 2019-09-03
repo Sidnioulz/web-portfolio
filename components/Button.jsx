@@ -11,7 +11,7 @@ const Button = props => (
       css.Button}${
       props.scale === 'small' ? ` ${css.ButtonSmall}` : ''}${
       !props.children ? ` ${css.ButtonNoText}` : ''} ${
-      props.className}`}
+      props.className || ''}`}
   >
     {props.icon ? (<Icon className={css.ButtonIcon} name={props.icon} />) : ''}
     {props.children ? <span className={css.ButtonInner}>{props.children}</span> : ''}
