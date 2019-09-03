@@ -11,9 +11,11 @@ class MDTextField extends React.Component {
         * We need to give it a few milliseconds or it won't properly handle
         * the focus event when we focus. */
       setTimeout(() => {
-        const { inputElement } = this.input;
-        if (inputElement) {
-          inputElement.focus();
+        if (this.input) {
+          const { inputElement } = this.input;
+          if (inputElement) {
+            inputElement.focus();
+          }
         }
       }, 10);
     }
