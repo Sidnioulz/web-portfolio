@@ -43,7 +43,7 @@
     background-image: none;
   }
 
-  @if $height != null {
+  @if $color != null {
     color: $color;
   } @else {
     color: get-color('Anthracite');
