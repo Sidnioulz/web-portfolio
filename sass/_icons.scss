@@ -11,16 +11,6 @@
   font-weight: normal;
   font-style: normal;
 }
-/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
-/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
-/*
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  @font-face {
-    font-family: 'portfolio';
-    src: url('/static/font/portfolio.svg?25530018#portfolio') format('svg');
-  }
-}
-*/
 
  [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "portfolio";
@@ -58,4 +48,30 @@
   .icon-quote:before { content: '\e803'; } /* '' */
   .icon-copy:before { content: '\e805'; } /* '' */
   .icon-close:before { content: '\e806'; } /* '' */
+}
+
+
+/* End of Fontello file. Animations below. Compose to use. */
+@keyframes translationX {
+  0% {
+    transform: translateX(-40%);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(40%);
+    opacity: 0;
+  }
+}
+
+.icon-animated-translation-x {
+  &:before {
+    animation: translationX 2s linear infinite;
+    animation-delay: -1s;
+  }
 }

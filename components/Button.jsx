@@ -13,8 +13,13 @@ const Button = props => (
       !props.children ? ` ${css.ButtonNoText}` : ''} ${
       props.className || ''}`}
   >
-    {props.icon ? (<Icon className={css.ButtonIcon} name={props.icon} />) : ''}
-    {props.children ? <span className={css.ButtonInner}>{props.children}</span> : ''}
+    {props.icon ? (
+      <Icon
+        className={`${css.ButtonIcon}${props.inProgress ? ` ${css.ButtonIconAnimated}` : ''}`}
+        name={props.icon}
+      />
+    ) : ''}
+    {props.children ? <span className={css.ButtonInner}>{props.inProgress ? props.inProgressText : props.children}</span> : ''}
     {props.tooltip ? <div className={css.Tooltip}>{props.tooltip}</div> : ''}
   </button>
 );
@@ -22,6 +27,8 @@ const Button = props => (
 Button.propTypes = {
   disabled: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   icon: PropTypes.string,
+  inProgress: PropTypes.bool,
+  inProgressText: PropTypes.string,
   handler: PropTypes.func,
   scale: PropTypes.oneOf(['small', 'medium']),
   tooltip: PropTypes.string,
@@ -31,6 +38,8 @@ Button.propTypes = {
 Button.defaultProps = {
   disabled: null,
   icon: null,
+  inProgress: false,
+  inProgressText: null,
   handler: () => true,
   scale: 'medium',
   tooltip: null,

@@ -44,20 +44,6 @@ $button-disabled-border-color: rgba(get-color('Pierre'), 0.2) !default;
     background-color 200ms cubic-bezier(.4, 0, .2, 1),
     border-color 200ms cubic-bezier(.4, 0, .2, 1);
 
-  .ButtonIcon {
-    flex: 0 0 auto;
-    &:before {
-      color: $button-color;
-    }
-  }
-
-  .ButtonInner {
-    flex: 1 0 auto;
-    color: $button-color;
-    @include typography-body-lead($button-color);
-  }
-
-
   &.ButtonNoText {
     width: 24px;
     height: 24px;
@@ -120,4 +106,21 @@ $button-disabled-border-color: rgba(get-color('Pierre'), 0.2) !default;
     background-color: $button-disabled-background-color;
     border-color: $button-disabled-border-color;
   }
+}
+
+.ButtonIcon {
+  flex: 0 0 auto;
+  &:before {
+    color: $button-color;
+  }
+}
+
+.ButtonIconAnimated {
+  composes: icon-animated-translation-x from '../_icons.scss';
+}
+
+.ButtonInner {
+  flex: 1 0 auto;
+  color: $button-color;
+  @include typography-body-lead($button-color);
 }
