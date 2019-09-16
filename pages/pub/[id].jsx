@@ -6,7 +6,15 @@ import json from 'data/publications.json';
 
 const Page = props => (
   <>
-    <PortfolioHead title={props.publication.title} />
+    <PortfolioHead title={props.publication.title}>
+      <meta property="og:title" content={props.publication.title} />
+      <meta property="og:type" content="article" />
+      <meta property="article:author" content={props.publication.authors.join(', ')} />
+      <meta property="article:published_time" content={props.publication.year} />
+      <meta property="article:section" content="Science" />
+      <meta property="og:site_name" content="Steve D. Lazaro's Portfolio" />
+      <meta property="og:locale" content="en_GB" />
+    </PortfolioHead>
     <Link href="/publications">
       <a>Back</a>
     </Link>
